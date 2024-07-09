@@ -1,0 +1,92 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+#hero-container {
+     width: 100vw;
+     height: 100vh;
+     overflow: hidden;
+     display: flex;
+     justify-content: end;
+
+     .div1 {
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          position: absolute;
+          z-index: 5;
+          margin-left: 5em;
+
+          h1 {
+               font-size: 4em;
+          }
+          p {
+               font-style: italic;
+               mix-blend-mode: multiply;
+          }
+          button {
+               margin-right: 1em;
+               padding: 0.5em 2.5em;
+               border: 2px solid black;
+               border-radius: 10px;
+               background-color: transparent;
+          }
+
+          ul > li {
+               margin-top: 1em;
+               font-size: 2em;
+               margin-right: 1em;
+
+               a {
+                    color: rgba(0, 0, 0, 0.856);
+               }
+          }
+     }
+
+     .div2 {
+          position: unset;
+          z-index: -1;
+
+          .img-container {
+               position: relative;
+               overflow: hidden;
+               margin-top: -2em;
+               margin-right: -20em;
+               width: 70em;
+               height: 70em;
+               border-radius: 210em 121em 176em 120em;
+               background-color: black;
+
+               .img {
+                    position: absolute;
+                    height: 80em;
+                    margin-top: -28em;
+                    rotate: -40deg;
+                    transform: translateX(-200px);
+                    transition: 3s ease-in-out linear;
+                    animation: translation 10s linear infinite;
+
+                    @keyframes translation {
+                         0% {
+                              scale: 3;
+                              transform: translateY(300px);
+                         }
+                         10% {
+                              scale: 1;
+                              transform: translateX(-200px);
+                         }
+                         70% {
+                              scale: 1;
+                              transform: translateX(-1200px);
+                         }
+                         100% {
+                              transform: translateY(300px);
+                              scale: 6;
+                         }
+                    }
+               }
+          }
+     }
+}
