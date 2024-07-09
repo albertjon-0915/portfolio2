@@ -7,24 +7,28 @@
 #hero-container {
      width: 100vw;
      height: 100vh;
-     overflow: hidden;
+     position: relative;
      display: flex;
-     justify-content: end;
+     overflow: hidden;
+
+     .div1,
+     .div2 {
+          flex: 1;
+     }
 
      .div1 {
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
+          // color: #f54104;
           position: absolute;
-          z-index: 5;
-          margin-left: 5em;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
 
           h1 {
                font-size: 4em;
+               mix-blend-mode: difference;
           }
           p {
                font-style: italic;
-               mix-blend-mode: multiply;
           }
           button {
                margin-right: 1em;
@@ -46,29 +50,29 @@
      }
 
      .div2 {
-          position: unset;
-          z-index: -1;
+          position: relative;
+          display: flex;
+          justify-content: end;
 
           .img-container {
-               position: relative;
+               position: absolute;
                overflow: hidden;
-               margin-top: -2em;
-               margin-right: -20em;
+               margin-top: -3em;
+               margin-right: -15em;
                width: 70em;
                height: 70em;
-               border-radius: 210em 121em 176em 120em;
-               background-color: black;
+               border-radius: 220em 121em 176em 200em;
 
                .img {
                     position: absolute;
                     height: 80em;
-                    margin-top: -28em;
                     rotate: -40deg;
+                    margin-top: -28em;
                     transform: translateX(-200px);
                     transition: 3s ease-in-out linear;
-                    animation: translation 10s linear infinite;
+                    animation: translation1 10s linear infinite;
 
-                    @keyframes translation {
+                    @keyframes translation1 {
                          0% {
                               scale: 3;
                               transform: translateY(300px);
