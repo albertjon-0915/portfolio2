@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App.scss";
 import { Container } from "react-bootstrap";
 import space from "../img/space.jpg";
+// import astro from "../img/astronaut.webp";
+import astronaut from "../img/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 
-function hero() {
-     window.addEventListener("resize", () => {
-          const imgContainer = document.querySelector(".img-container");
-          const img = document.querySelector(".img");
-          const width = window.innerWidth;
+function Hero() {
+     const [animateOut, setAnimationOut] = useState(false);
+     const [bgAnimate, setBgAnimate] = useState(false);
 
-          // if (width > 1400) {
-          //      img.classList.add("animate-img");
-          //      img.classList.add("rotate-styling");
-          //      // img.classList.remove("hero-img-covered");
-          //      imgContainer.classList.add("border-styling");
-          // } else if (width < 1400) {
-          //      img.classList.remove("animate-img");
-          //      img.classList.remove("rotate-styling");
-          //      // img.classList.add("hero-img-covered");
-          //      imgContainer.classList.remove("border-styling");
-          // } else {
-          //      imgContainer.classList.add("release-styling");
-          // }
-     });
+     // function for window resize
+     // astronaut image animation out function
+     const windowResize = () => {
+          window.addEventListener("resize", () => {
+               const imgAstro = document.getElementById("img-astro");
+               const imgBg = document.getElementById("img-bg");
+               const width = window.innerWidth;
+
+               if (width < 1400) {
+                    setAnimationOut(true);
+                    // imgAstro.classList.add("animate-out");
+               } else {
+                    setAnimationOut(false);
+                    // imgAstro.classList.remove("animate-out");
+               }
+          });
+     };
+
+     useEffect(() => {
+          windowResize();
+     }, []);
+
      return (
           <Container fluid id="hero-container">
                <div className="div1 p-md-5 p-sm-2">
@@ -32,7 +40,7 @@ function hero() {
                     <p>"An aspiring future web developer"</p>
                     <div className="d-inline">
                          <button>Explore</button>
-                         <button>Contact me</button>
+                         <button className="my-2">Contact me</button>
                     </div>
                     <ul className="list-unstyled d-flex">
                          <li>
@@ -53,12 +61,17 @@ function hero() {
                     </ul>
                </div>
                <div className="div2">
-                    <div className="img-container ">
-                         <img className="img " src={space} alt="img" />
-                    </div>
+                    <img id="img-bg" src={space} alt="img" />
+                    <img
+                         id="img-astro"
+                         className={animateOut ? "animate-in" : "animate-out    "}
+                         src={astronaut}
+                         alt="img"
+                    />
                </div>
+               {/* <div className="div3" style={{ width: "50em", height: "50em" }}></div> */}
           </Container>
      );
 }
 
-export default hero;
+export default Hero;

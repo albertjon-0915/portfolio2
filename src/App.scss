@@ -1,96 +1,178 @@
+@import "./styling/variables.scss";
+
 * {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
 }
 
-#hero-container {
-     width: 100vw;
-     height: 100vh;
-     position: relative;
-     display: flex;
-     overflow: hidden;
-
-     .div1,
-     .div2 {
-          flex: 1;
+#navbar {
+     a {
+          color: $primaryFontColor;
+          mix-blend-mode: difference;
      }
 
+     .nav-link {
+          color: darken($primaryFontColor, 20%);
+     }
+}
+
+#hero-container {
+     position: relative;
+     overflow: hidden;
+
      .div1 {
-          // color: #f54104;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100vh;
 
           h1 {
-               font-size: 4em;
+               font-size: 5rem;
+          }
+
+          h1,
+          a,
+          p,
+          button {
+               color: $primaryFontColor;
                mix-blend-mode: difference;
           }
+
           p {
+               color: darken($primaryFontColor, 20%);
                font-style: italic;
           }
+
           button {
-               margin-right: 1em;
-               padding: 0.5em 2.5em;
-               border: 2px solid black;
-               border-radius: 10px;
-               background-color: transparent;
+               margin-right: 2em;
+               background: none;
+               border: 1px solid $primaryFontColor;
+               padding: 0.5em 3em;
+               color: darken($primaryFontColor, 20%);
           }
 
           ul > li {
-               margin-top: 1em;
                font-size: 2em;
+               margin-top: 1em;
                margin-right: 1em;
-
-               a {
-                    color: rgba(0, 0, 0, 0.856);
-               }
           }
      }
 
      .div2 {
-          position: relative;
-          display: flex;
-          justify-content: end;
+          transition: 1s ease-in-out;
+          position: absolute;
+          top: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          left: 0;
 
-          .img-container {
-               position: absolute;
-               overflow: hidden;
-               margin-top: -3em;
+          @media (min-width: 1400px) {
+               left: unset;
+               right: 0 !important;
                margin-right: -15em;
-               width: 70em;
-               height: 70em;
-               border-radius: 220em 121em 176em 200em;
+               width: 70vw;
+               height: 100vh;
+               border-radius: 200em 0 0 0;
+               overflow: hidden;
+          }
 
-               .img {
-                    position: absolute;
-                    height: 80em;
-                    rotate: -40deg;
-                    margin-top: -28em;
-                    transform: translateX(-200px);
-                    transition: 3s ease-in-out linear;
-                    animation: translation1 10s linear infinite;
+          :first-child {
+               width: calc(100% + 60vw);
+               height: calc(100% + 30vh);
+               margin-top: -25em;
+               margin-left: -10em;
+               transform: translateY(0);
+               rotate: -40deg;
+               transition: 1s ease-in-out;
+               animation: 10s translation-animation linear infinite;
+               object-fit: cover;
 
-                    @keyframes translation1 {
-                         0% {
-                              scale: 3;
-                              transform: translateY(300px);
-                         }
-                         10% {
-                              scale: 1;
-                              transform: translateX(-200px);
-                         }
-                         70% {
-                              scale: 1;
-                              transform: translateX(-1200px);
-                         }
-                         100% {
-                              transform: translateY(300px);
-                              scale: 6;
-                         }
+               @keyframes translation-animation {
+                    0% {
+                         scale: 3;
+                         transform: translateY(300px);
+                    }
+                    10% {
+                         scale: 1;
+                         transform: translateX(-200px);
+                    }
+                    70% {
+                         scale: 1;
+                         transform: translateX(-900px);
+                    }
+                    100% {
+                         transform: translateY(300px);
+                         scale: 6;
                     }
                }
+
+               @media (max-width: 1400px) {
+                    filter: brightness(60%);
+                    width: 100% !important;
+                    height: 100% !important;
+                    animation: none;
+                    rotate: unset;
+                    margin: unset;
+               }
+          }
+
+          :last-child {
+               // visibility: hidden;
+               filter: brightness(80%);
+               position: absolute;
+               top: 50%;
+               right: 0;
+               margin-right: 20em;
+               margin-top: 5em;
+               width: 15em;
+               height: 15em;
+               transition: 0.5s ease-in-out;
+
+               @media (max-width: 576px) {
+                    margin-right: 10em;
+                    margin-top: 20em;
+                    width: 7em;
+                    height: 7em;
+               }
+          }
+     }
+}
+
+.animate-in {
+     animation: animate-astronaut 15s ease-in-out infinite;
+
+     @keyframes animate-astronaut {
+          0% {
+               transform: translateY(-70%);
+               scale: 1;
+          }
+          50% {
+               transform: translateY(-10%);
+               scale: 1.2;
+          }
+          100% {
+               transform: translateY(-70%);
+               scale: 1;
+          }
+     }
+}
+
+.animate-out {
+     animation: animate-out-astronaut 0.6s forwards;
+
+     @keyframes animate-out-astronaut {
+          0% {
+               scale: 1;
+          }
+          30% {
+               transform: translateY(70%);
+               scale: 0.7;
+          }
+          100% {
+               scale: 0;
+               visibility: hidden;
           }
      }
 }
