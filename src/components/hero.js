@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
+
 import { Container } from "react-bootstrap";
 import space from "../img/space.jpg";
-// import astro from "../img/astronaut.webp";
 import astronaut from "../img/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 
 function Hero() {
      const [animateOut, setAnimationOut] = useState(false);
-     const [bgAnimate, setBgAnimate] = useState(false);
 
      // function for window resize
      // astronaut image animation out function
@@ -20,10 +19,8 @@ function Hero() {
 
                if (width < 1400) {
                     setAnimationOut(true);
-                    // imgAstro.classList.add("animate-out");
                } else {
                     setAnimationOut(false);
-                    // imgAstro.classList.remove("animate-out");
                }
           });
      };
@@ -69,7 +66,6 @@ function Hero() {
                          alt="img"
                     />
                </div>
-               {/* <div className="div3" style={{ width: "50em", height: "50em" }}></div> */}
           </Container>
      );
 }
