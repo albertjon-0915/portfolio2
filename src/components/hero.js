@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../App.scss";
+import "../styling/hero.scss";
 
 import { Container } from "react-bootstrap";
 import space from "../img/space.jpg";

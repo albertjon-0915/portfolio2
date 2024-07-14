@@ -1,5 +1,5 @@
 import React from "react";
-import "../../App.scss";
+import "../../styling/about.scss";
 import { Container, Col } from "react-bootstrap";
 import me from "../../img/me.jpg";
 

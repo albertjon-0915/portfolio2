@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+#navbar {
+     a {
+          color: $primaryFontColor;
+          mix-blend-mode: difference;
+     }
+
+     .nav-link {
+          color: darken($primaryFontColor, 20%);
+     }
+}
