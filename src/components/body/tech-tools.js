@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styling/tools.scss";
 import { Container } from "react-bootstrap";
 import { FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaReact, FaSass, FaBootstrap, FaGitAlt } from "react-icons/fa6";
 import { DiMongodb } from "react-icons/di";

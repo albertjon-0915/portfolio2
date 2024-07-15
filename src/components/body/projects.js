@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import "../../styling/projects.scss";
 import { Card, Button, Container, Col } from "react-bootstrap";
 import { FaCaretDown } from "react-icons/fa6";
 
 function TechAndTools() {
      const [cardArr, setCardArr] = useState([]);
-     
 
      const cardcounter = [
           {
@@ -70,11 +70,16 @@ function TechAndTools() {
      }, []);
 
      return (
-          <Container fluid className="project-container d-flex justify-content-center flex-column">
+          <Container
+               fluid
+               className="project-container d-flex justify-content-center flex-column"
+               style={{ "--bs-gutter-x": "0rem" }}
+          >
                <h1 className="text-center mb-5">Project</h1>
                <div className="card-container">
                     <div className="more">
                          <button id="btnMore">
+                              more
                               <FaCaretDown />
                          </button>
                     </div>

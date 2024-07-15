@@ -1,5 +1,5 @@
 import React from "react";
-import "../../App.scss";
+import "../../styling/services.scss";
 import { Container } from "react-bootstrap";
 import working from "../../img/working.png";
 import { MdDynamicFeed, MdOutlineDesignServices, MdScreenshotMonitor } from "react-icons/md";

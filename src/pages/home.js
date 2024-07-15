@@ -6,6 +6,8 @@ import About from "../components/body/about";
 import Projects from "../components/body/projects";
 import TechAndTools from "../components/body/tech-tools";
 import Services from "../components/body/services";
+import Footer from "../components/footer";
+import Contact from "../components/body/contact";
 
 function HeroPage() {
      return (
@@ -15,6 +17,8 @@ function HeroPage() {
                <Services />
                <TechAndTools />
                <Projects />
+               <Contact />
+               <Footer />
           </>
      );
 }
