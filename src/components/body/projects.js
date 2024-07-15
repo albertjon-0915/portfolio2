@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button, Container, Col } from "react-bootstrap";
+import { FaCaretDown } from "react-icons/fa6";
 
 function TechAndTools() {
      const [cardArr, setCardArr] = useState([]);
+     
 
      const cardcounter = [
           {
@@ -68,11 +70,13 @@ function TechAndTools() {
      }, []);
 
      return (
-          <Container fluid className="tech-tool-container d-flex justify-content-center flex-column">
+          <Container fluid className="project-container d-flex justify-content-center flex-column">
                <h1 className="text-center mb-5">Project</h1>
                <div className="card-container">
                     <div className="more">
-                         <button id="btnMore">More</button>
+                         <button id="btnMore">
+                              <FaCaretDown />
+                         </button>
                     </div>
                     {cardArr && cardArr.length > 0
                          ? cardArr.map((item, index) => (

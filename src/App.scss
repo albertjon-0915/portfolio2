@@ -7,7 +7,7 @@
      box-sizing: border-box;
 }
 
-.tech-tool-container {
+.project-container {
      padding: 5em;
 
      .card-container {
@@ -49,6 +49,106 @@
 
           .btn-card {
                @include buttonConfig();
+          }
+     }
+}
+
+.tools-section {
+     background: $bgColor;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 7em 0;
+     margin: 10em 0;
+
+     .tools-container {
+          display: flex;
+          justify-content: center;
+          gap: 1em;
+          font-size: 5em;
+
+          svg {
+               color: $differenceFontColor;
+          }
+     }
+
+     ul {
+          position: relative;
+          display: flex;
+          gap: 1em;
+          background: linear-gradient(
+               to right,
+               rgb(0, 247, 255),
+               rgb(255, 123, 0),
+               rgb(255, 81, 0),
+               rgb(197, 30, 0),
+               rgb(255, 11, 11),
+               rgb(221, 0, 129)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          li {
+               font-size: 1.5em;
+               padding-right: 1em;
+
+               &:not(:last-child) {
+                    border-right: 1px solid darken($differenceFontColor, 40%);
+               }
+          }
+     }
+}
+
+.services-container {
+     height: 60vh;
+     display: flex;
+     align-items: center;
+     margin-left: 20em;
+     margin-bottom: 5em;
+     padding: 25em 0;
+     background: url(".//img/working.png");
+     background-repeat: no-repeat;
+     background-position: bottom right;
+     background-size: 30rem 30rem;
+     transition: 0.5s ease-in-out;
+     color: $primaryFontColor;
+
+     @media (max-width: 1600px) {
+          margin-left: 1em;
+     }
+
+     @media (max-width: 1200px) {
+          background-size: 15rem 15rem;
+     }
+
+     .service-item {
+          #service {
+               display: flex;
+               gap: 1em;
+               margin-bottom: 1em;
+               transition: 0.5s ease-in-out;
+               margin-left: calc(var(--i) * 5em);
+               
+               p{
+                    color: lighten($primaryFontColor, 20%);
+               }
+
+               @media (max-width: 1400px) {
+                    margin-left: calc(var(--i) * 3em);
+               }
+
+               @media (max-width: 992px) {
+                    margin-left: calc(var(--i) * 4em);
+               }
+
+               @media (max-width: 576px) {
+                    margin-left: calc(var(--i) * 0em);
+               }
+
+               svg {
+                    font-size: 5em;
+               }
           }
      }
 }

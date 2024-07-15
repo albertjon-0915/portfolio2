@@ -3,10 +3,14 @@
 #navbar {
      a {
           color: $primaryFontColor;
-          mix-blend-mode: difference;
+
+          @media (max-width: 1400px) {
+               color: $differenceFontColor !important;
+               mix-blend-mode: difference;
+          }
      }
 
      .nav-link {
-          color: darken($primaryFontColor, 20%);
+          color: lighten($primaryFontColor, 10%);
      }
 }

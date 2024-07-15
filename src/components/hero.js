@@ -13,8 +13,6 @@ function Hero() {
      // astronaut image animation out function
      const windowResize = () => {
           window.addEventListener("resize", () => {
-               const imgAstro = document.getElementById("img-astro");
-               const imgBg = document.getElementById("img-bg");
                const width = window.innerWidth;
 
                if (width < 1400) {
@@ -36,7 +34,7 @@ function Hero() {
                     <h1>I'am Albert Inciong</h1>
                     <p>"An aspiring future web developer"</p>
                     <div className="d-inline">
-                         <button>Explore</button>
+                         <button>Resume</button>
                          <button className="my-2">Contact me</button>
                     </div>
                     <ul className="list-unstyled d-flex">
@@ -61,7 +59,7 @@ function Hero() {
                     <img id="img-bg" src={space} alt="img" />
                     <img
                          id="img-astro"
-                         className={animateOut ? "animate-in" : "animate-out    "}
+                         className={animateOut ? "animate-in" : "animate-out"}
                          src={astronaut}
                          alt="img"
                     />
