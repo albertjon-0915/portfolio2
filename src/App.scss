@@ -6,3 +6,68 @@
      padding: 0;
      box-sizing: border-box;
 }
+
+.form-container {
+     position: relative;
+     margin: 20vh 0;
+     border-radius: 15px;
+     border: 1px solid lighten($primaryFontColor, 50%);
+
+     h1 {
+          color: $primaryFontColor;
+     }
+
+     form {
+          position: relative;
+          padding: 5em;
+
+          button {
+               @include buttonConfig();
+          }
+
+          img {
+               position: absolute;
+               right: 0;
+               top: 50%;
+               transform: translateY(-50%);
+               transition: 0.5s ease-in-out;
+               animation: UFO-positioning 5s linear infinite;
+
+               @keyframes UFO-positioning {
+                    0% {
+                         margin-top: 5em;
+                    }
+                    50% {
+                         margin-top: -5em;
+                    }
+
+                    100% {
+                         margin-top: 5em;
+                    }
+               }
+
+               @media (max-width: 1200px) {
+                    top: 30%;
+                    transform: translateY(-70%);
+                    scale: 0.5;
+               }
+
+               @media (max-width: 992px) {
+                    animation: none;
+                    top: unset;
+                    right: 0;
+                    bottom: 0;
+                    margin: -4em;
+               }
+
+               @media (max-width: 576px) {
+                    scale: 0;
+                    visibility: hidden;
+               }
+          }
+     }
+
+     @media (max-width: 576px) {
+          margin: 10vh 0;
+     }
+}

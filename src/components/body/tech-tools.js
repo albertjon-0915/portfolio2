@@ -26,7 +26,7 @@ function TechTools() {
                          <div key={index}>{item}</div>
                     ))}
                </div>
-               <ul className="list-unstyled">
+               <ul className="list-unstyled mt-5">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>

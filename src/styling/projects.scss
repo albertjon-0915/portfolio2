@@ -15,6 +15,14 @@
           overflow: hidden;
           box-shadow: 0 15px 15px 1px lighten($primaryFontColor, 60%);
 
+          .card-body {
+               .card-title,
+               .card-text,
+               button {
+                    color: $primaryFontColor;
+               }
+          }
+
           .more {
                position: absolute;
                bottom: 0;
