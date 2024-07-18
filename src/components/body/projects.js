@@ -6,53 +6,23 @@ import { FaCaretDown } from "react-icons/fa6";
 function TechAndTools() {
      const [cardArr, setCardArr] = useState([]);
 
-     const cardcounter = [
-          {
-               title: "Static/ Front end",
-               img: "https://programs.austincc.edu/wp-content/uploads/2023/12/GettyImages-9053011381.jpg",
-               text: "HTML, CSS, Bootstrap, JavaScript",
-          },
-          {
-               title: "API / Back end",
-               img: "https://cdn.feedingtrends.com/article-images/Gabriel_Heinzer_de5d928bc0",
-               text: "NodeJS, ExpressJS, Mongoose, MongoDB",
-          },
-          {
-               title: "API / Back end",
-               img: "https://cdn.feedingtrends.com/article-images/Gabriel_Heinzer_de5d928bc0",
-               text: "NodeJS, ExpressJS, Mongoose, MongoDB",
-          },
-          {
-               title: "API / Back end",
-               img: "https://cdn.feedingtrends.com/article-images/Gabriel_Heinzer_de5d928bc0",
-               text: "NodeJS, ExpressJS, Mongoose, MongoDB",
-          },
-          {
-               title: "MERN Stack / Full stack",
-               img: "https://cdn.filestackcontent.com/G33P8iuoRuinYep5O6dt",
-               text: "MERN Stack, Restful API's, Postman, ReactJS",
-          },
-          {
-               title: "MERN Stack / Full stack",
-               img: "https://cdn.filestackcontent.com/G33P8iuoRuinYep5O6dt",
-               text: "MERN Stack, Restful API's, Postman, ReactJS",
-          },
-          {
-               title: "MERN Stack / Full stack",
-               img: "https://cdn.filestackcontent.com/G33P8iuoRuinYep5O6dt",
-               text: "MERN Stack, Restful API's, Postman, ReactJS",
-          },
-          {
-               title: "MERN Stack / Full stack",
-               img: "https://cdn.filestackcontent.com/G33P8iuoRuinYep5O6dt",
-               text: "MERN Stack, Restful API's, Postman, ReactJS",
-          },
-          {
-               title: "MERN Stack / Full stack",
-               img: "https://cdn.filestackcontent.com/G33P8iuoRuinYep5O6dt",
-               text: "MERN Stack, Restful API's, Postman, ReactJS",
-          },
-     ];
+     // fetch projects data from mongodb
+     const fetchProj = () => {
+          fetch(`http://localhost:4000/stack/`)
+               .then((res) => res.json())
+               .then((data) => {
+                    const receivedData = data.result.projects;
+
+                    setCardArr([...receivedData.fullstack, ...receivedData.backend, ...receivedData.frontend]);
+
+                    console.log(cardArr);
+               });
+     };
+
+     useEffect(() => {
+          fetchProj();
+          moreBtn();
+     }, []);
 
      const moreBtn = () => {
           const btn = document.getElementById("btnMore");
@@ -64,14 +34,10 @@ function TechAndTools() {
                more.style.display = "none";
           });
      };
-     useEffect(() => {
-          setCardArr(cardcounter);
-          moreBtn();
-     }, []);
 
      return (
           <Container
-               fluid
+               // fluid
                className="project-container d-flex justify-content-center flex-column"
                style={{ "--bs-gutter-x": "0rem" }}
           >
@@ -92,10 +58,11 @@ function TechAndTools() {
                                      sm={12}
                                      key={index}
                                 >
-                                     <Card.Img variant="top" src={item.img} />
+                                     <Card.Img variant="top" src={item.imageString} />
                                      <Card.Body>
                                           <Card.Title>{item.title}</Card.Title>
-                                          <Card.Text>{item.text}</Card.Text>
+                                          <Card.Subtitle>{item.subtitle}</Card.Subtitle>
+                                          <Card.Text>{item.description}</Card.Text>
                                           <Button className="btn-card">Go somewhere</Button>
                                      </Card.Body>
                                 </Card>

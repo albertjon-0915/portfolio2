@@ -17,9 +17,12 @@
 
           .card-body {
                .card-title,
-               .card-text,
+               .card-subtitle,
                button {
                     color: $primaryFontColor;
+               }
+               .card-text {
+                    color: lighten($primaryFontColor, 20%);
                }
           }
 

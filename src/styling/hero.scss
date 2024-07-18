@@ -71,6 +71,7 @@
                background: $bgColor;
                transition: none;
                z-index: -2;
+               filter: brightness(80%);
           }
 
           @media (min-width: 1400px) {
