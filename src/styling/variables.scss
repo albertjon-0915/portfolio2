@@ -1,13 +1,15 @@
 $differenceFontColor: #c5c5c5;
 $primaryFontColor: #3a3a3a;
-$bgColor: rgb(1, 25, 34);
+$bgColor: rgb(2, 24, 32);
 
 @mixin buttonConfig() {
      margin-right: 2em;
+     border-radius: unset !important;
      background: none;
      border: 1px solid $primaryFontColor;
      padding: 0.5em 3em;
      color: lighten($primaryFontColor, 30%);
+     transition: 0.3s ease-in-out;
 
      &:hover {
           color: $differenceFontColor;

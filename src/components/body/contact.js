@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
+import "../../styling/contact.scss";
 import astronaut from "../../img/UFO.png";
 
 function contact() {
@@ -7,7 +8,7 @@ function contact() {
           <Container className="form-container">
                <h1 className="m-md-5 m-4">Contact me</h1>
                <Form noValidate>
-                    <Row className="mb-3">
+                    {/* <Row className="mb-3">
                          <Form.Group as={Col} md="4" controlId="validationCustom01">
                               <Form.Label>First name</Form.Label>
                               <Form.Control required type="text" placeholder="First name" />
@@ -18,7 +19,7 @@ function contact() {
                               <Form.Control required type="text" placeholder="Last name" />
                               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                          </Form.Group>
-                    </Row>
+                    </Row> */}
                     <Row className="mb-3">
                          <Form.Group as={Col} md="4" controlId="validationCustom01">
                               <Form.Label>Email</Form.Label>

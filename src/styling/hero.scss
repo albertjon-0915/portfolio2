@@ -53,13 +53,25 @@
      }
 
      .div2 {
-          transition: 1s ease-in-out;
           position: absolute;
           top: 0;
           z-index: -1;
           width: 100%;
           height: 100%;
           left: 0;
+
+          &::before {
+               position: absolute;
+               top: 0;
+               left: 0;
+               content: "";
+               display: block;
+               width: 100%;
+               height: 100%;
+               background: $bgColor;
+               transition: none;
+               z-index: -2;
+          }
 
           @media (min-width: 1400px) {
                left: unset;

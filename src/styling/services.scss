@@ -10,12 +10,15 @@
      background: url("..//img/working.png");
      background-repeat: no-repeat;
      background-position: bottom right;
-     background-size: 30rem 30rem;
+     background-size: 50rem 50rem;
      transition: 0.5s ease-in-out;
      color: $primaryFontColor;
 
      @media (max-width: 1600px) {
           margin-left: 1em;
+     }
+     @media (max-width: 1400px) {
+          background-size: 30rem 30rem;
      }
 
      @media (max-width: 1200px) {
