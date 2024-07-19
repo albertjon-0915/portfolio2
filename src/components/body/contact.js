@@ -6,7 +6,7 @@ import astronaut from "../../img/UFO.png";
 function contact() {
      return (
           <Container className="form-container">
-               <h1 className="m-md-5 m-4">Contact me</h1>
+               <h1 className="m-md-5 m-4">CONTACT ME</h1>
                <Form noValidate>
                     {/* <Row className="mb-3">
                          <Form.Group as={Col} md="4" controlId="validationCustom01">

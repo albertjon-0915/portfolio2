@@ -9,7 +9,7 @@ function Body() {
                <div className="about-content d-lg-flex">
                     <Col lg={6} md={12} className="first">
                          <div>
-                              <h1 className="py-4">About me</h1>
+                              <h1 className="py-4">ABOUT ME</h1>
                               <div className="img-container">
                                    <img src={me} alt="img" />
                               </div>

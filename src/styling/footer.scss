@@ -1,9 +1,27 @@
 @import "./variables.scss";
 
 .footer {
-     background: $bgColor;
+     position: relative;
+     background: linear-gradient(to top, rgba(0, 0, 0, 0.541), transparent), url("../img/space.jpg");
+     background-size: cover;
      padding: 4em 0;
      color: $differenceFontColor;
+
+     &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(26, 26, 26, 0.451);
+     }
+
+     & * {
+          position: relative;
+          z-index: 1;
+     }
 
      .div1 {
           display: flex;
@@ -31,20 +49,20 @@
      .div2 {
           display: flex;
           justify-content: center;
-          color: darken($differenceFontColor, 40%);
 
           ul {
                li {
                     font-size: clamp(0.8em, 2.5vw, 1.2em);
                     padding: 0 1.5em;
+                    mix-blend-mode: difference;
 
                     &:nth-last-child(1) {
-                         color: darken($differenceFontColor, 40%);
+                         color: darken($differenceFontColor, 20%);
                          border-left: 1px solid;
                     }
 
                     &:nth-last-child(2) {
-                         color: darken($differenceFontColor, 40%);
+                         color: darken($differenceFontColor, 20%);
                          border-left: 1px solid;
                     }
                }

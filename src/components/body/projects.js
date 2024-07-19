@@ -19,10 +19,10 @@ function TechAndTools() {
                });
      };
 
-     useEffect(() => {
-          fetchProj();
-          moreBtn();
-     }, []);
+     // useEffect(() => {
+     //      fetchProj();
+     //      moreBtn();
+     // }, []);
 
      const moreBtn = () => {
           const btn = document.getElementById("btnMore");
@@ -35,39 +35,47 @@ function TechAndTools() {
           });
      };
 
+     // return (
+     //      // <Container
+     //      //      className="project-container d-flex justify-content-center flex-column"
+     //      //      style={{ "--bs-gutter-x": "0rem" }}
+     //      // >
+     //      //      <h1 className="text-center mb-5">Project</h1>
+     //      //      <div className="card-container">
+     //      //           <div className="more">
+     //      //                <button id="btnMore">
+     //      //                     more
+     //      //                     <FaCaretDown />
+     //      //                </button>
+     //      //           </div>
+     //      //           {cardArr && cardArr.length > 0
+     //      //                ? cardArr.map((item, index) => (
+     //      //                       <Card
+     //      //                            style={{ maxWidth: "25em", minWidth: "18em" }}
+     //      //                            as={Col}
+     //      //                            md={4}
+     //      //                            sm={12}
+     //      //                            key={index}
+     //      //                       >
+     //      //                            <Card.Img variant="top" src={item.imageString} />
+     //      //                            <Card.Body>
+     //      //                                 <Card.Title>{item.title}</Card.Title>
+     //      //                                 <Card.Subtitle>{item.subtitle}</Card.Subtitle>
+     //      //                                 <Card.Text>{item.description}</Card.Text>
+     //      //                                 <Button className="btn-card">Go somewhere</Button>
+     //      //                            </Card.Body>
+     //      //                       </Card>
+     //      //                  ))
+     //      //                : null}
+     //      //      </div>
+     //      // </Container>
+     // );
+
      return (
-          <Container
-               // fluid
-               className="project-container d-flex justify-content-center flex-column"
-               style={{ "--bs-gutter-x": "0rem" }}
-          >
-               <h1 className="text-center mb-5">Project</h1>
-               <div className="card-container">
-                    <div className="more">
-                         <button id="btnMore">
-                              more
-                              <FaCaretDown />
-                         </button>
-                    </div>
-                    {cardArr && cardArr.length > 0
-                         ? cardArr.map((item, index) => (
-                                <Card
-                                     style={{ maxWidth: "25em", minWidth: "18em" }}
-                                     as={Col}
-                                     md={4}
-                                     sm={12}
-                                     key={index}
-                                >
-                                     <Card.Img variant="top" src={item.imageString} />
-                                     <Card.Body>
-                                          <Card.Title>{item.title}</Card.Title>
-                                          <Card.Subtitle>{item.subtitle}</Card.Subtitle>
-                                          <Card.Text>{item.description}</Card.Text>
-                                          <Button className="btn-card">Go somewhere</Button>
-                                     </Card.Body>
-                                </Card>
-                           ))
-                         : null}
+          <Container fluid className="parent-sample-container">
+               <div className="sample-container m-sm-2">
+                    <div className="item1"></div>
+                    <div className="item2"></div>
                </div>
           </Container>
      );
