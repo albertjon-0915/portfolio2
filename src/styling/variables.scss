@@ -16,3 +16,27 @@ $bgColor: rgba(14, 31, 47, 255);
           background: lighten($primaryFontColor, 10%);
      }
 }
+
+@mixin buttonConfig2($paddingvalue1, $paddingvalue2, $marginvalue, $borderColor) {
+     border-radius: unset !important;
+     background: none;
+     border: 1px solid $borderColor;
+     padding: $paddingvalue1 $paddingvalue2;
+     color: lighten($borderColor, 30%);
+     transition: 0.3s ease-in-out;
+
+     &:hover {
+          color: $differenceFontColor;
+          background: lighten($primaryFontColor, 10%);
+     }
+
+     &:last-child {
+          margin-left: $marginvalue;
+     }
+}
+
+@mixin centered-absolute() {
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
