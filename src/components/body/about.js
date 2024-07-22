@@ -1,7 +1,9 @@
 import React from "react";
+import Lottie from "lottie-react";
 import "../../styling/about.scss";
 import { Container, Col } from "react-bootstrap";
 import me from "../../img/me.jpg";
+import astronautAnimated from "../../components/body/lottie_animations/astronaut.json";
 
 function Body() {
      return (

@@ -78,7 +78,11 @@ function Projects() {
                     </div>
                     <div className="item" id="item6">
                          <div>
-                              <h3>See more projects</h3>
+                              {/* <h3>See more projects</h3> */}
+                              <div>
+                                   <div></div>
+                              </div>
+                              <button>See more</button>
                          </div>
                     </div>
                </div>
