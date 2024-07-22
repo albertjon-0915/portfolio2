@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../styling/projects.scss";
-import { Card, Button, Container, Col } from "react-bootstrap";
-import { FaCaretDown } from "react-icons/fa6";
-import { BsCardChecklist } from "react-icons/bs";
+import { Container } from "react-bootstrap";
+import City from "../../img/city.png";
 
-function TechAndTools() {
+function Projects() {
      const [front, setFrontend] = useState([]);
      const [back, setBackend] = useState([]);
      const [full, setFullStack] = useState([]);
-     const [render, setRenderItem] = useState({});
 
      // fetch projects data from mongodb
      const fetchProj = () => {
@@ -16,33 +14,15 @@ function TechAndTools() {
                .then((res) => res.json())
                .then(async (data) => {
                     const receivedData = await data.result.projects;
-                    console.log(receivedData);
-
-                    // setProjects([...receivedData.fullstack, ...receivedData.backend, ...receivedData.frontend]);
-
-                    await setFrontend([...receivedData.frontend]);
-                    await setBackend([...receivedData.backend]);
-                    await setFullStack([...receivedData.fullstack]);
-
-                    await console.log(full);
+                    setFrontend([...receivedData.frontend]);
+                    setBackend([...receivedData.backend]);
+                    setFullStack([...receivedData.fullstack]);
                });
      };
 
      useEffect(() => {
           fetchProj();
-          // moreBtn();
      }, []);
-
-     const moreBtn = () => {
-          const btn = document.getElementById("btnMore");
-          const cardContainer = document.querySelector(".card-container");
-          const more = document.querySelector(".more");
-
-          btn.addEventListener("click", () => {
-               cardContainer.style.maxHeight = "unset";
-               more.style.display = "none";
-          });
-     };
 
      const renderProject = (stack) => {
           if (stack.length > 0) {
@@ -62,42 +42,6 @@ function TechAndTools() {
           }
      };
 
-     // return (
-     //      // <Container
-     //      //      className="project-container d-flex justify-content-center flex-column"
-     //      //      style={{ "--bs-gutter-x": "0rem" }}
-     //      // >
-     //      //      <h1 className="text-center mb-5">Project</h1>
-     //      //      <div className="card-container">
-     //      //           <div className="more">
-     //      //                <button id="btnMore">
-     //      //                     more
-     //      //                     <FaCaretDown />
-     //      //                </button>
-     //      //           </div>
-     //      //           {cardArr && cardArr.length > 0
-     //      //                ? cardArr.map((item, index) => (
-     //      //                       <Card
-     //      //                            style={{ maxWidth: "25em", minWidth: "18em" }}
-     //      //                            as={Col}
-     //      //                            md={4}
-     //      //                            sm={12}
-     //      //                            key={index}
-     //      //                       >
-     //      //                            <Card.Img variant="top" src={item.imageString} />
-     //      //                            <Card.Body>
-     //      //                                 <Card.Title>{item.title}</Card.Title>
-     //      //                                 <Card.Subtitle>{item.subtitle}</Card.Subtitle>
-     //      //                                 <Card.Text>{item.description}</Card.Text>
-     //      //                                 <Button className="btn-card">Go somewhere</Button>
-     //      //                            </Card.Body>
-     //      //                       </Card>
-     //      //                  ))
-     //      //                : null}
-     //      //      </div>
-     //      // </Container>
-     // );
-
      return (
           <Container fluid className="parent-project-container">
                <div className="project-wrapper m-sm-2">
@@ -114,23 +58,27 @@ function TechAndTools() {
                          {renderProject(front)}
                     </div>
                     <div className="item" id="item5">
-                         <div className="d-flex">
-                              <div className="div1">
-                                   <h3 className="text-wrap">What do i offer</h3>
+                         <div className="item5-content d-flex">
+                              <div className="text-content">
+                                   <div className="div1">
+                                        <h3>
+                                             <span>What</span>
+                                             <span>do i</span>
+                                             <span>offer</span>
+                                        </h3>
+                                   </div>
+                                   <div className="div2">
+                                        <div>Front end (HTML, CSS, JS & etc.)</div>
+                                        <div>Back end (API's & etc.)</div>
+                                        <div>Full stack (MERN Stack)</div>
+                                   </div>
                               </div>
-                              <div className="div2">
-                                   <div className="text-wrap">front end</div>
-                                   <div className="text-wrap">back end</div>
-                                   <div className="text-wrap">full stack</div>
-                              </div>
-                         </div>
-                         <div>
-                              <BsCardChecklist />
+                              <div className="img-content"></div>
                          </div>
                     </div>
                     <div className="item" id="item6">
                          <div>
-                              <h3>See more project</h3>
+                              <h3>See more projects</h3>
                          </div>
                     </div>
                </div>
@@ -138,4 +86,4 @@ function TechAndTools() {
      );
 }
 
-export default TechAndTools;
+export default Projects;
