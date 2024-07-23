@@ -14,28 +14,40 @@ function Services() {
                               <MdScreenshotMonitor />
                               <div>
                                    <h4>Responsiveness</h4>
-                                   <p>ensures that websites adapt fluidly to different devices and screen sizes </p>
+                                   <p>
+                                        Ensures websites adapt fluidly to different devices and screen sizes, providing
+                                        an optimal viewing experience across all platforms.
+                                   </p>
                               </div>
                          </div>
                          <div style={{ "--i": 2 }} id="service">
                               <MdDynamicFeed />
                               <div>
                                    <h4>Dynamic</h4>
-                                   <p>creating interactive and responsive web applications</p>
+                                   <p>
+                                        Creates interactive and responsive web applications that engage users with
+                                        real-time updates and responsive features.
+                                   </p>
                               </div>
                          </div>
                          <div style={{ "--i": 3 }} id="service">
                               <MdOutlineDesignServices />
                               <div>
                                    <h4>Creative</h4>
-                                   <p>combining aesthetics with functionality to captivate users</p>
+                                   <p>
+                                        Combines aesthetics with functionality to craft visually appealing interfaces
+                                        that enhance user experience.
+                                   </p>
                               </div>
                          </div>
                          <div style={{ "--i": 4 }} id="service">
                               <FaStopwatch />
                               <div>
                                    <h4>Fast</h4>
-                                   <p>fast web development</p>
+                                   <p>
+                                        Delivers high-quality web development solutions quickly and efficiently,
+                                        optimizing both speed and performance.
+                                   </p>
                               </div>
                          </div>
                     </div>

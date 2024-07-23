@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import space from "../img/space.jpg";
 import astronaut from "../img/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import something from "../img/Albert Jon Inciong.pdf";
 
 function Hero() {
      const [animateOut, setAnimationOut] = useState(false);
@@ -30,11 +31,12 @@ function Hero() {
      return (
           <Container fluid id="hero-container">
                <div className="div1 p-md-5 p-sm-2">
-                    {/* <h1 className="fs-3">Hi,</h1> */}
                     <h1>ALBERT INCIONG</h1>
                     <p>"An aspiring future web developer"</p>
                     <div className="d-inline">
-                         <button>Resume</button>
+                         <a href={something} download="Albert Jon Inciong.pdf" className="resume-download">
+                              Resume
+                         </a>
                          <button className="my-2">Contact me</button>
                     </div>
                     <ul className="list-unstyled d-flex">

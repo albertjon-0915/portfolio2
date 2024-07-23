@@ -8,9 +8,9 @@ import astronautAnimated from "../../components/body/lottie_animations/astronaut
 function contact() {
      return (
           <Container fluid className="contact-container d-flex justify-content-center">
-               <div className="lottie-wrapper">
+               {/* <div className="lottie-wrapper">
                     <Lottie animationData={astronautAnimated} />
-               </div>
+               </div> */}
                <Container className="form-container">
                     <h1 className="m-md-5 m-4 text-center">CONTACT ME</h1>
                     <Form noValidate>

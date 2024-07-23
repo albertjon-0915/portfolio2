@@ -37,7 +37,9 @@
                font-style: italic;
           }
 
-          button {
+          button,
+          .resume-download {
+               text-decoration: none;
                @include buttonConfig();
 
                @media (max-width: 1400px) {

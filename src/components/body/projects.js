@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styling/projects.scss";
 import { Container } from "react-bootstrap";
-import City from "../../img/city.png";
+import videoRender from "../../img/video-coding.mp4";
 
 function Projects() {
      const [front, setFrontend] = useState([]);
@@ -78,11 +78,23 @@ function Projects() {
                     </div>
                     <div className="item" id="item6">
                          <div>
-                              {/* <h3>See more projects</h3> */}
-                              <div>
-                                   <div></div>
+                              <div className="vid-container">
+                                   <video src={videoRender} type="video/mp4" loop autoPlay preload="auto" muted></video>
                               </div>
-                              <button>See more</button>
+                              <div>
+                                   <div className="item6-content-container">
+                                        <p>
+                                             want to see <span>MORE</span> projects?
+                                        </p>
+                                        <p>
+                                             Here are some projects i build <span>personally</span> and projects during
+                                             my coding <span>bootcamp</span>
+                                        </p>
+                                   </div>
+                                   <div className="btn-container">
+                                        <button>See more</button>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "../App.scss";
 import Hero from "../components/hero";
@@ -10,6 +10,15 @@ import Footer from "../components/footer";
 import Contact from "../components/body/contact";
 
 function HeroPage() {
+     // const Yscroll = () => {
+     //      window.addEventListener("scroll", (e) => {
+     //           const scrollY = e.scrollY;
+     //           console.log(scrollY);
+     //      });
+     // };
+     // useEffect(() => {
+     //      Yscroll();
+     // }, []);
      return (
           <>
                <Hero />
