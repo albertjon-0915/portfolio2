@@ -1,54 +1,142 @@
 @import "./variables.scss";
 
+// .about-container {
+//      padding: 10em 0;
+//      color: $primaryFontColor;
+
+//      .about-content {
+//           .first {
+//                display: flex;
+//                justify-content: center;
+//                div {
+//                     display: flex;
+//                     flex-direction: column;
+
+//                     @media (max-width: 992px) {
+//                          width: 100%;
+//                     }
+
+//                     .img-container {
+//                          position: relative;
+//                          width: 30em;
+
+//                          @media (max-width: 992px) {
+//                               width: 100%;
+//                               height: 30vh;
+//                               object-fit: cover;
+//                          }
+
+//                          img {
+//                               width: 100%;
+//                               height: 100%;
+//                               border-radius: 15px;
+//                               object-fit: cover;
+//                          }
+//                     }
+//                }
+//           }
+
+//           .last {
+//                display: flex;
+//                flex-direction: column;
+//                justify-content: center;
+
+//                p {
+//                     font-size: 1.2em;
+//                     line-height: 1.8em;
+//                     color: lighten($primaryFontColor, 20%);
+//                }
+
+//                button {
+//                     @include buttonConfig();
+//                }
+//           }
+//      }
+// }
+@mixin mediaConfig() {
+     @media (max-width: 1600px) {
+          width: 25em;
+          height: 25em;
+     }
+
+     @media (max-width: 1200px) {
+          margin-left: 10em;
+          margin-bottom: -5em;
+     }
+
+     @media (max-width: 992px) {
+          margin-left: 10em;
+          margin-bottom: -3em;
+     }
+
+     @media (max-width: 992px) {
+          margin-left: 7em;
+          margin-bottom: -3em;
+          width: 15em;
+          height: 15em;
+     }
+
+     @media (max-width: 576px) {
+          margin-left: 5em;
+          margin-bottom: -2em;
+     }
+}
+
 .about-container {
+     display: flex;
+     flex-direction: column;
      padding: 10em 0;
-     color: $primaryFontColor;
 
-     .about-content {
-          .first {
-               display: flex;
-               justify-content: center;
-               div {
-                    display: flex;
-                    flex-direction: column;
+     #img-coding {
+          position: relative;
+          position: relative;
+          display: flex;
+          justify-content: center;
 
-                    @media (max-width: 992px) {
-                         width: 100%;
-                    }
-
-                    .img-container {
-                         position: relative;
-                         width: 30em;
-
-                         @media (max-width: 992px) {
-                              width: 100%;
-                              height: 30vh;
-                              object-fit: cover;
-                         }
-
-                         img {
-                              width: 100%;
-                              height: 100%;
-                              border-radius: 15px;
-                              object-fit: cover;
-                         }
-                    }
-               }
+          #img1 {
+               border: 1px solid $differenceFontColor;
+               max-width: 70%;
+               border-radius: 15px;
           }
 
-          .last {
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
+          #img2 {
+               position: absolute;
+               border-radius: 15px;
+               width: 30em;
+               height: 30em;
+               left: 50%;
+               bottom: 0;
+               transform: translateX(-50%);
+               margin-left: 20em;
+               margin-bottom: -15em;
+               box-shadow: 0 0 13px 1px rgba(66, 66, 66, 0.342);
 
-               p {
-                    font-size: 1.2em;
-                    line-height: 1.8em;
-                    color: lighten($primaryFontColor, 20%);
-               }
+               @include mediaConfig();
+          }
+     }
+
+     .content-wrapper {
+          padding: 3em 0;
+          display: flex;
+          justify-content: center;
+
+          .text-wrapper {
+               margin-right: 40em;
 
                button {
                     @include buttonConfig();
+               }
+
+               @media (max-width: 1600px) {
+                    margin-right: 20em;
+               }
+
+               @media (max-width: 1200px) {
+                    margin-right: 15em;
+               }
+
+               @media (max-width: 992px) {
+                    margin-right: 0;
                }
           }
      }

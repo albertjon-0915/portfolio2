@@ -11,7 +11,14 @@
 h1,
 h2,
 h3 {
-     // font-family: "Source Sans 3", sans-serif !important;
-     font-family: "Syncopate", sans-serif;
+     font-family: "Source Sans 3", sans-serif !important;
      font-weight: 700 !important;
+}
+
+.color-bgColor {
+     background: $bgColor !important;
+}
+
+#home {
+     transition: 0.5s ease-in-out;
 }

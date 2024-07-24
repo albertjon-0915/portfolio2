@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styling/projects.scss";
 import { Container } from "react-bootstrap";
-import videoRender from "../../img/video-coding.mp4";
+import videoRender from "../../media/video-coding.mp4";
 
 function Projects() {
      const [front, setFrontend] = useState([]);
@@ -81,8 +81,8 @@ function Projects() {
                               <div className="vid-container">
                                    <video src={videoRender} type="video/mp4" loop autoPlay preload="auto" muted></video>
                               </div>
-                              <div>
-                                   <div className="item6-content-container">
+                              <div className="item6-content-container">
+                                   <div className="item6-text-container">
                                         <p>
                                              want to see <span>MORE</span> projects?
                                         </p>

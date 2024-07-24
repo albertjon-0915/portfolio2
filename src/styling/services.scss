@@ -7,7 +7,7 @@
      margin-left: 20em;
      margin-bottom: 5em;
      padding: 25em 0;
-     background: url("..//img/working.png");
+     background: url("..//media/working.png");
      background-repeat: no-repeat;
      background-position: bottom right;
      background-size: 50rem 50rem;
@@ -23,6 +23,10 @@
 
      @media (max-width: 1200px) {
           background-size: 15rem 15rem;
+     }
+
+     @media (max-width: 576px) {
+          padding: 32em 0;
      }
 
      .service-item {

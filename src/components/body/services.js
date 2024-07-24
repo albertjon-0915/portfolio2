@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styling/services.scss";
 import { Container } from "react-bootstrap";
-import working from "../../img/working.png";
+import working from "../../media/working.png";
 import { MdDynamicFeed, MdOutlineDesignServices, MdScreenshotMonitor } from "react-icons/md";
 import { FaStopwatch } from "react-icons/fa";
 

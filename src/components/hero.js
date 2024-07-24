@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../styling/hero.scss";
 
 import { Container } from "react-bootstrap";
-import space from "../img/space.jpg";
-import astronaut from "../img/astonaut.webp";
+import space from "../media/space.jpg";
+import astronaut from "../media/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
-import something from "../img/Albert Jon Inciong.pdf";
+import something from "../media/Albert Jon Inciong.pdf";
 
 function Hero() {
      const [animateOut, setAnimationOut] = useState(false);

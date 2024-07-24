@@ -1,23 +1,19 @@
 import React from "react";
-import Lottie from "lottie-react";
 import "../../styling/about.scss";
-import { Container, Col } from "react-bootstrap";
-import me from "../../img/me.jpg";
-import astronautAnimated from "../../components/body/lottie_animations/astronaut.json";
+import { Container } from "react-bootstrap";
+import me from "../../media/me.jpg";
+import mycode from "../../media/mycode.PNG";
 
 function Body() {
      return (
           <Container fluid className="about-container">
-               <div className="about-content d-lg-flex">
-                    <Col lg={6} md={12} className="first">
-                         <div>
-                              <h1 className="py-4">ABOUT ME</h1>
-                              <div className="img-container">
-                                   <img src={me} alt="img" />
-                              </div>
-                         </div>
-                    </Col>
-                    <Col lg={6} md={12} className="last mt-5 pt-md-5 pe-lg-5 px-md-5 px-sm-4 px-4">
+               <div id="img-coding">
+                    <img src={mycode} alt="img" id="img1" />
+                    <img src={me} alt="img" id="img2" />
+               </div>
+               <div className="content-wrapper">
+                    <div className="text-wrapper" style={{ width: "500px" }}>
+                         <h3>ABOUT ME</h3>
                          <p className="me-lg-5 ">Hello there!</p>
                          <p className="me-lg-5 ">
                               I'm a passionate web developer skilled in both frontend and backend technologies, using
@@ -29,7 +25,7 @@ function Body() {
                          <button className="about-btn py-2 mt-5" style={{ maxWidth: "12rem" }}>
                               Contact
                          </button>
-                    </Col>
+                    </div>
                </div>
           </Container>
      );
