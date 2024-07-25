@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../styling/navbar.scss";
 
 function navbar() {
@@ -18,11 +19,15 @@ function navbar() {
                          </Offcanvas.Header>
                          <Offcanvas.Body>
                               <Nav className="justify-content-end flex-grow-1 pe-3">
-                                   <Nav.Link href="#home">Home</Nav.Link>
+                                   <Nav.Link as={Link} to={"/"}>
+                                        Home
+                                   </Nav.Link>
                                    <Nav.Link href="#features">Projects</Nav.Link>
                                    <Nav.Link href="#features">Services</Nav.Link>
                                    <Nav.Link href="#pricing">About me</Nav.Link>
-                                   <Nav.Link href="#pricing">Sign up</Nav.Link>
+                                   <Nav.Link as={Link} to={"/signup"}>
+                                        Sign up
+                                   </Nav.Link>
                               </Nav>
                          </Offcanvas.Body>
                     </Navbar.Offcanvas>
