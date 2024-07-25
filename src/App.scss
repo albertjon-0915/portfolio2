@@ -1,6 +1,5 @@
 @import "./styling/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Syncopate");
 
 * {
      margin: 0;
@@ -16,9 +15,9 @@ h3 {
 }
 
 .color-bgColor {
-     background: $bgColor !important;
+     background-color: $bgColor;
 }
 
 #home {
-     transition: 0.5s ease-in-out;
+     transition: 0.2s ease-in-out;
 }

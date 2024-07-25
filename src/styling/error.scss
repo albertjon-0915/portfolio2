@@ -1,0 +1,5 @@
+@import "../styling/variables.scss";
+
+#back-home-btn {
+     @include buttonConfig();
+}

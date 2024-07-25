@@ -32,12 +32,12 @@ function Hero() {
           <Container fluid id="hero-container">
                <div className="div1 p-md-5 p-sm-2">
                     <h1>ALBERT INCIONG</h1>
-                    <p>"An aspiring future web developer"</p>
+                    <p className="mb-5">"An aspiring future web developer"</p>
                     <div className="d-inline">
                          <a href={something} download="Albert Jon Inciong.pdf" className="resume-download">
                               Resume
                          </a>
-                         <button className="my-2">Contact me</button>
+                         <a className="contact-button">Contact me</a>
                     </div>
                     <ul className="list-unstyled d-flex">
                          <li>

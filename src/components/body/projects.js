@@ -79,7 +79,7 @@ function Projects() {
                     <div className="item" id="item6">
                          <div>
                               <div className="vid-container">
-                                   <video src={videoRender} type="video/mp4" loop autoPlay preload="auto" muted></video>
+                                   <video src={videoRender} loop autoPlay preload="auto" muted></video>
                               </div>
                               <div className="item6-content-container">
                                    <div className="item6-text-container">

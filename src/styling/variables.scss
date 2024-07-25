@@ -2,8 +2,8 @@ $differenceFontColor: #c5c5c5;
 $primaryFontColor: #3a3a3a;
 $bgColor: rgba(14, 31, 47, 255);
 
-@mixin buttonConfig() {
-     margin-right: 2em;
+@mixin buttonConfig($me: unset) {
+     margin-right: $me;
      border-radius: unset !important;
      background: none;
      border: 1px solid $primaryFontColor;
