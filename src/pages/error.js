@@ -6,11 +6,8 @@ import "../styling/error.scss";
 
 function error() {
      return (
-          <Container className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-               <div
-                    className="border d-flex justify-content-center align-items-center flex-column"
-                    style={{ height: "50%", width: "50%" }}
-               >
+          <Container className="error-container">
+               <div className="error-wrapper border">
                     <h1>404 Not found</h1>
                     <p>Error: Page not found | error loading page</p>
                     <Button id="back-home-btn" as={Link} to={"/"}>

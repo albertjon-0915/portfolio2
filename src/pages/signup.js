@@ -3,19 +3,19 @@ import { Container, Form, Row } from "react-bootstrap";
 
 function signup() {
      return (
-          <Container fluid>
-               <div className="form-container d-flex">
+          <Container fluid className="signup-container">
+               <div className="form-wrapper d-flex">
                     <Form className="login">
                          <Form.Group>
-                              <Form.Label></Form.Label>
+                              <Form.Label>Email</Form.Label>
                               <Form.Control></Form.Control>
                          </Form.Group>
                          <Form.Group>
-                              <Form.Label></Form.Label>
+                              <Form.Label>Password</Form.Label>
                               <Form.Control></Form.Control>
                          </Form.Group>
                          <Form.Group>
-                              <Form.Label></Form.Label>
+                              <Form.Label>Confirm password</Form.Label>
                               <Form.Control></Form.Control>
                          </Form.Group>
                     </Form>

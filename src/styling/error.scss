@@ -1,5 +1,22 @@
 @import "../styling/variables.scss";
 
-#back-home-btn {
-     @include buttonConfig();
+.error-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     width: 100vw;
+
+     .error-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 50%;
+          width: 50%;
+
+          #back-home-btn {
+               @include buttonConfig();
+          }
+     }
 }

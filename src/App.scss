@@ -14,10 +14,19 @@ h3 {
      font-weight: 700 !important;
 }
 
-.color-bgColor {
-     background-color: $bgColor;
+.bg-in-out {
+     transform: scale(0.99) !important;
+     opacity: 1 !important;
 }
 
-#home {
-     transition: 0.2s ease-in-out;
+.home {
+     background: radial-gradient(circle at center, rgba(14, 31, 47, 0.753), darken(rgba(14, 31, 47, 0.877), 10%)),
+          url("./media/space.jpg");
+     background-size: cover;
+     background-position: center;
+     transition: 0.4s ease-in-out;
+     border-radius: 35px;
+     margin: 0 auto;
+     transform: scale(0.6);
+     opacity: 0;
 }
