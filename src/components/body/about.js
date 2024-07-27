@@ -34,7 +34,7 @@ function Body() {
                          <img src={me} alt="img" id="img2" className={`img2 ${visible1 ? "img2-in-out" : ""}`} />
                     </div>
                </Waypoint>
-               <Waypoint onEnter={onEnterViewport2} onLeave={onExitViewport2} topOffset={"30%"} bottomOffset={"40%"}>
+               <Waypoint onEnter={onEnterViewport2} onLeave={onExitViewport2} topOffset={"30%"} bottomOffset={"30%"}>
                     <div className={`content-wrapper ${visible2 ? "content-in-out" : ""}`}>
                          <div className="text-wrapper" style={{ width: "500px" }}>
                               <h3>ABOUT ME</h3>

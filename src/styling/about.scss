@@ -60,12 +60,14 @@
                margin-bottom: -15em;
                box-shadow: 0 0 13px 1px rgba(66, 66, 66, 0.342);
                opacity: 0;
+               scale: 0;
 
                @include mediaConfig();
           }
 
           .img2-in-out {
                opacity: 1;
+               scale: 1;
                margin-left: 20em;
 
                @include mediaConfig();
@@ -80,7 +82,8 @@
           justify-content: center;
 
           .text-wrapper {
-               margin-right: 40em;
+               margin-right: 30em;
+               font-size: clamp(1em, 2.5vw, 1.3em);
 
                button {
                     @include buttonConfig();
