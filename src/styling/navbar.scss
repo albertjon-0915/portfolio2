@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 #navbar {
-     z-index: 1;
+     z-index: 2;
      @media (max-width: 768px) {
           min-width: 90vw;
      }
@@ -12,15 +12,16 @@
      }
 
      a {
-          color: $primaryFontColor;
+          color: $differenceFontColor;
+          font-size: 1.5em;
 
           @media (max-width: 1400px) {
                color: $differenceFontColor !important;
-               mix-blend-mode: difference;
           }
      }
 
      .nav-link {
-          color: lighten($primaryFontColor, 10%);
+          font-size: 1.2em;
+          color: $differenceFontColor;
      }
 }

@@ -17,17 +17,24 @@ $bgColor: rgba(14, 31, 47, 255);
      }
 }
 
-@mixin buttonConfig2($paddingvalue1, $paddingvalue2, $marginvalue, $borderColor) {
-     border-radius: unset !important;
+@mixin buttonConfig2(
+     $paddingvalue1,
+     $paddingvalue2,
+     $marginvalue,
+     $borderColor,
+     $background: none,
+     $borderradius: unset
+) {
+     border-radius: $borderradius !important;
      background: none;
      border: 1px solid $borderColor;
      padding: $paddingvalue1 $paddingvalue2;
-     color: lighten($borderColor, 30%);
+     color: $differenceFontColor;
      transition: 0.3s ease-in-out;
 
      &:hover {
           color: $differenceFontColor;
-          background: lighten($primaryFontColor, 10%);
+          background: $background;
      }
 
      &:last-child {

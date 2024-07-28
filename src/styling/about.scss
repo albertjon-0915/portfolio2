@@ -41,10 +41,18 @@
           display: flex;
           justify-content: center;
 
-          #img1 {
+          .img1 {
                border: 1px solid $differenceFontColor;
                max-width: 70%;
                border-radius: 15px;
+               transform: translateY(5em);
+               opacity: 0;
+               transition: 0.5s ease-in-out;
+          }
+
+          .img1-in-out {
+               opacity: 1;
+               transform: translateY(0);
           }
 
           .img2 {

@@ -1,190 +1,7 @@
 @import "./variables.scss";
 
-// #hero-container {
-//      position: relative;
-//      overflow: hidden;
-//      box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.24);
-
-//      .div1 {
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           height: 100vh;
-
-//           h1,
-//           p,
-//           button,
-//           a {
-//                transition: 0.5s ease-in-out;
-
-//                @media (max-width: 1400px) {
-//                     color: $differenceFontColor !important;
-//                     mix-blend-mode: difference;
-//                }
-//           }
-
-//           h1 {
-//                font-size: 5rem;
-//           }
-
-//           h1,
-//           a {
-//                color: $primaryFontColor;
-//           }
-
-//           p {
-//                color: lighten($primaryFontColor, 20%);
-//                font-style: italic;
-//           }
-
-//           .contact-button,
-//           .resume-download {
-//                text-decoration: none;
-//                @include buttonConfig(2em);
-
-//                @media (max-width: 1400px) {
-//                     border: 1px solid $differenceFontColor;
-//                }
-//           }
-
-//           ul > li {
-//                font-size: 2em;
-//                margin-top: 1em;
-//                margin-right: 1em;
-//           }
-//      }
-
-//      .div2 {
-//           position: absolute;
-//           top: 0;
-//           z-index: -1;
-//           width: 100%;
-//           height: 100%;
-//           left: 0;
-
-//           &::before {
-//                position: absolute;
-//                top: 0;
-//                left: 0;
-//                content: "";
-//                display: block;
-//                width: 100%;
-//                height: 100%;
-//                background: $bgColor;
-//                transition: none;
-//                z-index: -2;
-//                filter: brightness(80%);
-//           }
-
-//           @media (min-width: 1400px) {
-//                left: unset;
-//                right: 0 !important;
-//                margin-right: -15em;
-//                width: 70vw;
-//                height: 100vh;
-//                border-radius: 200em 0 0 0;
-//                overflow: hidden;
-//           }
-
-//           :first-child {
-//                width: calc(100% + 60vw);
-//                height: calc(100% + 30vh);
-//                margin-top: -25em;
-//                margin-left: -10em;
-//                transform: translateY(0);
-//                rotate: -40deg;
-//                transition: 1s ease-in-out;
-//                animation: 10s translation-animation linear infinite;
-//                object-fit: cover;
-
-//                @keyframes translation-animation {
-//                     0% {
-//                          scale: 3;
-//                          transform: translateY(300px);
-//                     }
-//                     10% {
-//                          scale: 1;
-//                          transform: translateX(-200px);
-//                     }
-//                     70% {
-//                          scale: 1;
-//                          transform: translateX(-900px);
-//                     }
-//                     100% {
-//                          transform: translateY(300px);
-//                          scale: 6;
-//                     }
-//                }
-
-//                @media (max-width: 1400px) {
-//                     filter: brightness(80%);
-//                     width: 100% !important;
-//                     height: 100% !important;
-//                     animation: none;
-//                     rotate: 0deg;
-//                     margin: unset;
-//                }
-//           }
-
-//           :last-child {
-//                filter: brightness(80%);
-//                position: absolute;
-//                top: 50%;
-//                right: 0;
-//                margin-right: 20em;
-//                margin-top: 5em;
-//                width: 15em;
-//                height: 15em;
-//                transition: 0.5s ease-in-out;
-
-//                @media (max-width: 576px) {
-//                     margin-right: 10em;
-//                     margin-top: 20em;
-//                     width: 7em;
-//                     height: 7em;
-//                }
-//           }
-//      }
-// }
-
-// .animate-in {
-//      animation: animate-astronaut 15s ease-in-out infinite;
-
-//      @keyframes animate-astronaut {
-//           0% {
-//                transform: translateY(-70%);
-//                scale: 1;
-//           }
-//           50% {
-//                transform: translateY(-10%);
-//                scale: 1.2;
-//           }
-//           100% {
-//                transform: translateY(-70%);
-//                scale: 1;
-//           }
-//      }
-// }
-
-// .animate-out {
-//      animation: animate-out-astronaut 0.6s forwards;
-
-//      @keyframes animate-out-astronaut {
-//           0% {
-//                scale: 1;
-//           }
-//           30% {
-//                transform: translateY(70%);
-//                scale: 0.7;
-//           }
-//           100% {
-//                scale: 0;
-//                visibility: hidden;
-//           }
-//      }
-// }
-
 .hero-container {
+     position: relative;
      border: 1px solid rgba(128, 128, 128, 0.288);
      width: 100vw;
      height: 100vh;
@@ -194,7 +11,7 @@
           url("../media/space.jpg");
      background-size: cover;
 
-     .content-wrapper {
+     .main-content-wrapper {
           height: 100%;
           display: flex;
           justify-content: center;
@@ -203,13 +20,39 @@
           color: $differenceFontColor;
 
           h1 {
-               font-size: clamp(1.5em, 5.5vw, 6em);
+               font-size: 6em;
                margin-bottom: 0;
                text-align: center;
+               opacity: 0;
+               animation: 1s appear ease-in-out forwards 0.5s;
+
+               @keyframes appear {
+                    from {
+                         opacity: 0;
+                    }
+                    to {
+                         opacity: 1;
+                    }
+               }
+
+               @media (max-width: 1400px) {
+                    font-size: 4em;
+               }
+
+               @media (max-width: 992px) {
+                    font-size: 3em;
+               }
+
+               @media (max-width: 576px) {
+                    font-size: 2em;
+               }
           }
 
           .text-wrapper1 {
                position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
                padding: 0 2em;
                height: 1vh;
                overflow: hidden;
@@ -221,8 +64,21 @@
                     0% {
                          height: 1vh;
                     }
+
                     100% {
                          height: calc(12vh + 5px);
+                    }
+               }
+
+               @media (max-width: 1400px) {
+                    @keyframes animatetext {
+                         0% {
+                              height: 1vh;
+                         }
+                         100% {
+                              visibility: visible;
+                              height: calc(10vh + 5px);
+                         }
                     }
                }
 
@@ -235,7 +91,11 @@
                     height: calc(12vh + 5px);
                     border-top: 10px solid;
                     border-bottom: 10px solid;
-                    animation: animateWidth 1s ease-in-out forwards, animateGoingRight 0.5s ease-in-out forwards 2s;
+                    animation: animateWidth 1s ease-in-out forwards, animateGoingRight 0.5s ease-in-out forwards 1.5s;
+
+                    @media (max-width: 1400px) {
+                         height: calc(10vh + 5px);
+                    }
 
                     @keyframes animateWidth {
                          0% {
@@ -263,24 +123,195 @@
 
           .text-wrapper2 {
                width: 35em;
+               display: flex;
+               align-items: center;
+
+               @media (max-width: 1400px) {
+                    width: 25em;
+               }
+
+               @media (max-width: 992px) {
+                    width: 15em;
+               }
 
                .h1-content {
                     text-align: start;
                }
-               // .profession {
-               //      background: linear-gradient(
-               //           to right,
-               //           #00f7ff,
-               //           #ff7b00,
-               //           #ff5100,
-               //           #c51e00,
-               //           #ff0b0b,
-               //           #dd0081
-               //      );
-               //      background-clip: text;
-               //      -webkit-background-clip: text;
-               //      -webkit-text-fill-color: transparent;
-               // }
+          }
+     }
+
+     .content-wrapper1,
+     .content-wrapper2 {
+          scale: 0.8;
+          visibility: hidden;
+          transition: 0.5s ease-in-out;
+
+          @keyframes delayedappearance {
+               from {
+                    visibility: hidden;
+                    transform: scale(0);
+               }
+               to {
+                    visibility: visible;
+                    transform: scale(1);
+               }
+          }
+
+          &:hover {
+               opacity: 1;
+               scale: 1;
+          }
+     }
+
+     .content-wrapper1 {
+          position: absolute;
+          bottom: 0;
+          max-width: 20em;
+          font-size: clamp(0.5em, 2.5vw, 1.1em);
+          margin: 3em 1em;
+          padding: 1em;
+          border: 1px solid $differenceFontColor;
+          border-radius: 3px;
+          color: $differenceFontColor;
+          opacity: 0.4;
+          animation: delayedappearance 0.5s ease-in-out forwards 2.1s;
+
+          @media (max-width: 576px) {
+               margin: 7em 1em;
+          }
+
+          p {
+               margin-bottom: 2em;
+          }
+
+          a {
+               text-decoration: none;
+               @include buttonConfig2(0.5em, 1.5em, unset, #dc3545, #dc3545);
+          }
+     }
+
+     .content-wrapper2 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          max-width: 20em;
+          font-size: clamp(0.5em, 2.5vw, 1.1em);
+          margin: 5em 2em;
+          padding: 1em;
+          border: 1px solid $differenceFontColor;
+          border-radius: 3px;
+          color: $differenceFontColor;
+          opacity: 0.4;
+          animation: delayedappearance 0.5s ease-in-out forwards 1.9s;
+
+          @media (max-width: 576px) {
+               margin: 8em 2em;
+          }
+
+          button {
+               @include buttonConfig2(0.5em, 1.5em, unset, #dc3545, #dc3545);
+
+               margin-top: 1em;
+          }
+     }
+
+     .socials-container {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          margin: 3em;
+          gap: 3em;
+
+          visibility: hidden;
+          // scale: 0;
+          transition: 0.5s ease-in-out;
+          animation: socialsdelayedappearance 0.5s ease-in-out forwards 2.3s;
+
+          @keyframes socialsdelayedappearance {
+               from {
+                    visibility: hidden;
+                    transform: scale(0);
+               }
+               to {
+                    visibility: visible;
+                    transform: scale(1);
+               }
+          }
+
+          @media (max-width: 992px) {
+               margin: 3em 0;
+               gap: 1em;
+               animation: appear-out 0.3s ease-in-out forwards, appear-in 0.5s ease-in-out forwards 0.5s;
+
+               @keyframes appear-in {
+                    0% {
+                         visibility: visible;
+                         bottom: auto;
+                         right: auto;
+                         top: 50%;
+                         left: 50%;
+                         margin-top: 7em;
+                         transform: translate(-50%, -50%);
+                    }
+                    10% {
+                         visibility: visible;
+                         bottom: auto;
+                         right: auto;
+                         top: 50%;
+                         left: 50%;
+                         margin-top: 7em;
+                         transform: translate(-50%, -50%);
+                         scale: 0;
+                    }
+                    100% {
+                         visibility: visible;
+                         bottom: auto;
+                         right: auto;
+                         top: 50%;
+                         left: 50%;
+                         margin-top: 7em;
+                         transform: translate(-50%, -50%);
+                         scale: 1;
+                    }
+               }
+
+               @keyframes appear-out {
+                    0% {
+                         scale: 1;
+                    }
+
+                    100% {
+                         scale: 0;
+                    }
+               }
+          }
+
+          .item1,
+          .item2,
+          .item3,
+          .item4 {
+               font-size: clamp(1em, 2.5vw, 2em);
+
+               svg {
+                    color: $differenceFontColor;
+               }
+          }
+          .item4 {
+               a {
+                    text-decoration: none;
+                    border-radius: 50px;
+                    background: #dc3545;
+                    border: 1px solid #dc3545;
+                    padding: 0.4em 1.5em;
+                    color: $differenceFontColor;
+                    transition: 0.3s ease-in-out;
+                    white-space: nowrap;
+
+                    &:hover {
+                         color: $differenceFontColor;
+                         background: none;
+                    }
+               }
           }
      }
 }

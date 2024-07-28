@@ -7,65 +7,11 @@ import { Container } from "react-bootstrap";
 import space from "../media/space.jpg";
 import astronaut from "../media/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import { GrContact } from "react-icons/gr";
+import { HiDownload } from "react-icons/hi";
 import something from "../media/Albert Jon Inciong.pdf";
 
 function Hero() {
-     // const [animateOut, setAnimationOut] = useState(false);
-     // // function for window resize
-     // // astronaut image animation out function
-     // const windowResize = () => {
-     //      window.addEventListener("resize", () => {
-     //           const width = window.innerWidth;
-     //           if (width < 1400) {
-     //                setAnimationOut(true);
-     //           } else {
-     //                setAnimationOut(false);
-     //           }
-     //      });
-     // };
-     // useEffect(() => {
-     //      windowResize();
-     // }, []);
-     // return (
-     //      <Container fluid id="hero-container">
-     //           <div className="div1 p-md-5 p-sm-2">
-     //                <h1>ALBERT INCIONG</h1>
-     //                <p className="mb-5">"An aspiring future web developer"</p>
-     //                <div className="d-inline">
-     //                     <a href={something} download="Albert Jon Inciong.pdf" className="resume-download">
-     //                          Resume
-     //                     </a>
-     //                     <a className="contact-button">Contact me</a>
-     //                </div>
-     //                <ul className="list-unstyled d-flex">
-     //                     <li>
-     //                          <a href="">
-     //                               <BsFacebook />
-     //                          </a>
-     //                     </li>
-     //                     <li>
-     //                          <a href="">
-     //                               <BsGithub />
-     //                          </a>
-     //                     </li>
-     //                     <li>
-     //                          <a href="">
-     //                               <BsLinkedin />
-     //                          </a>
-     //                     </li>
-     //                </ul>
-     //           </div>
-     //           <div className="div2">
-     //                <img id="img-bg" src={space} alt="img" />
-     //                <img
-     //                     id="img-astro"
-     //                     className={animateOut ? "animate-in" : "animate-out"}
-     //                     src={astronaut}
-     //                     alt="img"
-     //                />
-     //           </div>
-     //      </Container>
-     // );
      const color = ["#00f7ff", "#ff5100", "#c51e00", "#ff0b0b", "#dd0081"];
 
      const [currentIndex, setCurrentIndex] = useState(0);
@@ -99,14 +45,14 @@ function Hero() {
      useEffect(() => {
           const interval = setInterval(() => {
                setCurrentIndex((prevIndex) => (prevIndex + 1) % textspan.length);
-          }, 1500);
+          }, 2000);
 
           return () => clearInterval(interval);
      }, [textspan.length]);
 
      return (
           <Container fluid className="hero-container">
-               <div className="content-wrapper">
+               <div className="main-content-wrapper">
                     <div className="text-wrapper1">
                          <h1 className="h1-content">
                               Albert <span className="text-danger">Inciong</span>
@@ -115,7 +61,53 @@ function Hero() {
                     </div>
                     <div className="text-wrapper2">{textspan[currentIndex]}</div>
                </div>
-               <p></p>
+               <div className="content-wrapper1">
+                    <p className="lowerleft">
+                         Empowering your vision with seamless front-end experiences and robust back-end solutions. From
+                         design to deployment, I bring your ideas to life with precision and creativity.
+                    </p>
+                    <a href={something} download="Albert Jon Inciong.pdf" className="resume-download">
+                         resume
+                         <span className="ms-3">
+                              <HiDownload />
+                         </span>
+                    </a>
+               </div>
+
+               <div className="content-wrapper2">
+                    <p className="topright">
+                         As an aspiring developer, I am passionately honing my front-end and back-end skills to
+                         transform ideas into impactful digital solutions. My journey is driven by continuous learning
+                         and innovation.
+                    </p>
+                    <button>
+                         contact me
+                         <span className="ms-3">
+                              <GrContact />
+                         </span>
+                    </button>
+               </div>
+
+               <ul className="socials-container list-unstyled d-flex">
+                    <li className="item1">
+                         <a href="">
+                              <BsFacebook />
+                         </a>
+                    </li>
+                    <li className="item2">
+                         <a href="">
+                              <BsGithub />
+                         </a>
+                    </li>
+                    <li className="item3">
+                         <a href="">
+                              <BsLinkedin />
+                         </a>
+                    </li>
+                    <div className="item4">
+                         <a href="">Let's talk</a>
+                    </div>
+               </ul>
           </Container>
      );
 }
