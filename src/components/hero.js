@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 import "../styling/hero.scss";
 import { Container } from "react-bootstrap";
-import space from "../media/space.jpg";
-import astronaut from "../media/astonaut.webp";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { GrContact } from "react-icons/gr";
 import { HiDownload } from "react-icons/hi";
@@ -88,7 +85,28 @@ function Hero() {
                     </button>
                </div>
 
-               <ul className="socials-container list-unstyled d-flex">
+               <ul className="socials-container1 list-unstyled d-flex">
+                    <li className="item1">
+                         <a href="">
+                              <BsFacebook />
+                         </a>
+                    </li>
+                    <li className="item2">
+                         <a href="">
+                              <BsGithub />
+                         </a>
+                    </li>
+                    <li className="item3">
+                         <a href="">
+                              <BsLinkedin />
+                         </a>
+                    </li>
+                    <div className="item4">
+                         <a href="">Let's talk</a>
+                    </div>
+               </ul>
+
+               <ul className="socials-container2 list-unstyled d-flex">
                     <li className="item1">
                          <a href="">
                               <BsFacebook />

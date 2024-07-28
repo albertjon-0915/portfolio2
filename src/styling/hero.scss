@@ -215,7 +215,7 @@
           }
      }
 
-     .socials-container {
+     .socials-container1 {
           position: absolute;
           bottom: 0;
           right: 0;
@@ -223,11 +223,14 @@
           gap: 3em;
 
           visibility: hidden;
-          // scale: 0;
           transition: 0.5s ease-in-out;
-          animation: socialsdelayedappearance 0.5s ease-in-out forwards 2.3s;
+          animation: socialsdelayedappearance1 0.5s ease-in-out forwards 2.3s;
 
-          @keyframes socialsdelayedappearance {
+          @media (max-width: 992px) {
+               scale: 0;
+          }
+
+          @keyframes socialsdelayedappearance1 {
                from {
                     visibility: hidden;
                     transform: scale(0);
@@ -238,52 +241,49 @@
                }
           }
 
+          .item1,
+          .item2,
+          .item3,
+          .item4 {
+               font-size: clamp(1em, 2.5vw, 2em);
+
+               svg {
+                    color: $differenceFontColor;
+               }
+          }
+          .item4 {
+               a {
+                    text-decoration: none;
+                    border-radius: 50px;
+                    background: #dc3545;
+                    border: 1px solid #dc3545;
+                    padding: 0.4em 1.5em;
+                    color: $differenceFontColor;
+                    transition: 0.3s ease-in-out;
+                    white-space: nowrap;
+
+                    &:hover {
+                         color: $differenceFontColor;
+                         background: none;
+                    }
+               }
+          }
+     }
+
+     .socials-container2 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin: 10em 0 0 0;
+          gap: 3em;
+          scale: 0;
+          transition: 0.5s ease-in-out;
+
           @media (max-width: 992px) {
-               margin: 3em 0;
-               gap: 1em;
-               animation: appear-out 0.3s ease-in-out forwards, appear-in 0.5s ease-in-out forwards 0.5s;
-
-               @keyframes appear-in {
-                    0% {
-                         visibility: visible;
-                         bottom: auto;
-                         right: auto;
-                         top: 50%;
-                         left: 50%;
-                         margin-top: 7em;
-                         transform: translate(-50%, -50%);
-                    }
-                    10% {
-                         visibility: visible;
-                         bottom: auto;
-                         right: auto;
-                         top: 50%;
-                         left: 50%;
-                         margin-top: 7em;
-                         transform: translate(-50%, -50%);
-                         scale: 0;
-                    }
-                    100% {
-                         visibility: visible;
-                         bottom: auto;
-                         right: auto;
-                         top: 50%;
-                         left: 50%;
-                         margin-top: 7em;
-                         transform: translate(-50%, -50%);
-                         scale: 1;
-                    }
-               }
-
-               @keyframes appear-out {
-                    0% {
-                         scale: 1;
-                    }
-
-                    100% {
-                         scale: 0;
-                    }
-               }
+               margin: 7em 0 0 0;
+               gap: 2em;
+               scale: 1;
           }
 
           .item1,

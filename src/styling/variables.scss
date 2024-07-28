@@ -1,5 +1,6 @@
 $differenceFontColor: #c5c5c5;
 $primaryFontColor: #3a3a3a;
+$secondaryFontColor: #dc3545;
 $bgColor: rgba(14, 31, 47, 255);
 
 @mixin buttonConfig($me: unset) {
@@ -23,13 +24,14 @@ $bgColor: rgba(14, 31, 47, 255);
      $marginvalue,
      $borderColor,
      $background: none,
-     $borderradius: unset
+     $borderradius: unset,
+     $fontColor: #c5c5c5
 ) {
      border-radius: $borderradius !important;
      background: none;
      border: 1px solid $borderColor;
      padding: $paddingvalue1 $paddingvalue2;
-     color: $differenceFontColor;
+     color: $fontColor;
      transition: 0.3s ease-in-out;
 
      &:hover {
