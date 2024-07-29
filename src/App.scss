@@ -5,6 +5,7 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     scrollbar-width: none;
 }
 
 h1,
@@ -30,7 +31,3 @@ h3 {
      transform: scale(0.6);
      opacity: 0;
 }
-
-// .container-body {
-//      background-color: darken($bgColor, 6%);
-// }

@@ -2,8 +2,6 @@ import React from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import "../../styling/contact.scss";
 import astronaut from "../../media/UFO.png";
-import Lottie from "lottie-react";
-import astronautAnimated from "../../components/body/lottie_animations/astronaut.json";
 
 function contact() {
      return (

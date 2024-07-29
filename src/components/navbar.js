@@ -23,9 +23,10 @@ function navbar() {
                                         Home
                                    </Nav.Link>
                                    <Nav.Link href="#features">Projects</Nav.Link>
-                                   <Nav.Link href="#features">Services</Nav.Link>
-                                   <Nav.Link href="#pricing">About me</Nav.Link>
-                                   <Nav.Link as={Link} to={"/signup"}>
+                                   <Nav.Link as={Link} to={"/login"}>
+                                        Login
+                                   </Nav.Link>
+                                   <Nav.Link as={Link} to={"/register"}>
                                         Sign up
                                    </Nav.Link>
                               </Nav>
