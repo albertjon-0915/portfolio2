@@ -5,16 +5,10 @@ import { Button, Container } from "react-bootstrap";
 import videoRender from "../../media/video-coding.mp4";
 
 function Projects() {
+     const navigate = useNavigate();
      const [front, setFrontend] = useState([]);
      const [back, setBackend] = useState([]);
      const [full, setFullStack] = useState([]);
-
-     const navigate = useNavigate();
-
-     const handleNavigate = () => {
-          // Navigate to the /projects route
-          navigate("/works");
-     };
 
      // fetch projects data from mongodb
      const fetchProj = () => {
@@ -100,12 +94,7 @@ function Projects() {
                                         </p>
                                    </div>
                                    <div className="btn-container">
-                                        <Button
-                                             className="button-seemore"
-                                             as={Link}
-                                             to={"/works"}
-                                             // onClick={handleNavigate}
-                                        >
+                                        <Button className="button-seemore" onClick={() => navigate("/works")}>
                                              See more
                                         </Button>
                                    </div>

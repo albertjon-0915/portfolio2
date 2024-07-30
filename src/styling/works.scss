@@ -81,50 +81,74 @@
      }
 }
 
-.works-container {
-     border: 1px solid #1b1b1bf3;
-     //  height: 100vh;
-     padding: 5em 0;
-     //  background: radial-gradient(circle at center, #1b1b1bf3, #141313);
-     //  background-blend-mode: screen;
+.content-container {
+     display: flex;
 
-     ul {
-          display: flex;
-          gap: 5em;
-          overflow-y: auto;
-          overflow-x: hidden;
-          scrollbar-width: none;
+     .works-container {
+          //  height: 100vh;
+          padding: 5em 0;
+          //  background: radial-gradient(circle at center, #1b1b1bf3, #141313);
+          //  background-blend-mode: screen;
 
-          li {
+          h1 {
+               margin-bottom: 0.5em;
+          }
+
+          ul {
                display: flex;
-          }
+               gap: 5em;
+               scrollbar-width: none;
+               margin-bottom: 10em;
 
-          .card {
-               background: rgba(255, 255, 255, 0.05);
-               width: 30em;
-               //    height: 35em;
-          }
-
-          .works-card-btn {
-               outline: none;
-
-               @include buttonConfig2(
-                    0.5em,
-                    1.5em,
-                    unset,
-                    $secondaryFontColor,
-                    $secondaryFontColor,
-                    0,
-                    $primaryFontColor
-               );
-
-               &:hover,
-               &:focus {
-                    border-color: $secondaryFontColor;
-                    outline: none;
-                    box-shadow: none;
-                    background-color: $secondaryFontColor;
+               li {
+                    display: flex;
                }
+
+               .card {
+                    background: rgba(255, 255, 255, 0.05);
+                    width: 30em;
+                    border: none;
+                    border-radius: 5px;
+                    box-shadow: 1px -1px 15px 1px rgba(102, 102, 102, 0.164);
+               }
+
+               .works-card-btn {
+                    outline: none;
+
+                    @include buttonConfig2(
+                         0.5em,
+                         1.5em,
+                         1em,
+                         $secondaryFontColor,
+                         $secondaryFontColor,
+                         0,
+                         $primaryFontColor
+                    );
+
+                    &:hover,
+                    &:focus {
+                         border-color: $secondaryFontColor;
+                         outline: none;
+                         box-shadow: none;
+                         background-color: $secondaryFontColor;
+                    }
+               }
+          }
+     }
+
+     .tracer-container {
+          // border: 1px solid red;
+          min-width: 35em;
+          display: flex;
+          justify-content: center;
+
+          .tracer {
+               height: 50px;
+               min-height: 3%;
+               max-height: 85%;
+               width: 5em;
+               background: $primaryFontColor;
+               border-radius: 0 0 50px 50px;
           }
      }
 }
