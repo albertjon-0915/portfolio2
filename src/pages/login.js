@@ -1,8 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import "../styling/login.scss";
+
 import { Container, Form, Button } from "react-bootstrap";
 
 function Login() {
+     const navigate = useNavigate();
+
+     const [email, setEmail] = useState("");
+     const [password, setPassword] = useState("");
+     const [failedLogin, setFailedLogin] = useState(false);
+
      const getActive = () => {
           const input = document.querySelectorAll(".input-field-container");
 
@@ -18,30 +27,54 @@ function Login() {
           });
      };
 
-     const loginUser = () => {
-          fetch(`${process.env.REACT_APP_API_URL}/users/login`, { method: "POST" })
+     const loginUser = (e) => {
+          e.preventDefault();
+
+          fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
+               method: "POST",
+               headers: { "Content-type": "application/json" },
+               body: JSON.stringify({ email: email, password: password }),
+          })
                .then((res) => res.json())
                .then((result) => {
-                    console.log(result);
+                    if (result.message === "Login successfully") {
+                         navigate("/");
+                    } else {
+                         toast.error("failed to login");
+                    }
                });
      };
 
      useEffect(() => {
           getActive();
      }, []);
+
      return (
           <Container fluid className="signup-container">
                <div className="form-wrapper">
                     <div className="enclosure">
                          <h1 className="text-center">Login</h1>
-                         <Form className="login">
+
+                         <Form className="login" onSubmit={(e) => loginUser(e)}>
                               <Form.Group className="input-field-container">
                                    <Form.Label className="form-label">Email</Form.Label>
-                                   <Form.Control className="input-field" type="email" required></Form.Control>
+                                   <Form.Control
+                                        className="input-field"
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                   ></Form.Control>
                               </Form.Group>
                               <Form.Group className="input-field-container">
                                    <Form.Label className="form-label">Password</Form.Label>
-                                   <Form.Control className="input-field" type="password" required></Form.Control>
+                                   <Form.Control
+                                        className="input-field"
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                   ></Form.Control>
                               </Form.Group>
 
                               <Button type="submit" className="submit-button-wrapper ms-3">
@@ -59,6 +92,8 @@ function Login() {
                          </p>
                     </div>
                </div>
+
+               <Toaster position="bottom-left" toastOptions={{ className: "popupToast", duration: 5000 }} />
           </Container>
      );
 }
