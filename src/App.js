@@ -5,7 +5,8 @@ import Home from "./pages/home";
 import Error from "./pages/error";
 import Login from "./pages/login";
 import Register from "./pages/register";
-import Projects from "./pages/projects";
+import Projects from "./pages/works";
+import scrollToTop from "./scrollTop";
 
 function App() {
      return (
@@ -15,7 +16,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/works" element={<Projects />} />
                     <Route path="/logout" element={<Home />} />
                     <Route path="/*" element={<Error />} />
                </Routes>

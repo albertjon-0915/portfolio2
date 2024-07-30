@@ -1,0 +1,130 @@
+@import "../styling/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap");
+
+.carousel-container {
+     height: 100vh;
+     width: 100vw;
+     position: relative;
+     animation: animateHeight 1s ease-in-out forwards 2s;
+
+     background: radial-gradient(circle at center, rgba(14, 31, 47, 0.562), darken(rgb(14, 31, 47), 10%)),
+          url("../media/space.jpg");
+     background-size: cover;
+
+     @keyframes animateHeight {
+          0% {
+               height: 100vh;
+          }
+          100% {
+               height: 50vh;
+          }
+     }
+
+     h1 {
+          color: $secondaryFontColor;
+          font-family: "Antonio", sans-serif !important;
+          font-size: 5em;
+          position: absolute;
+          @include centered-absolute();
+          opacity: 0;
+          animation: animateAppear 1s ease-in-out forwards;
+          text-shadow: 0 0 12px $secondaryFontColor;
+
+          &:first-child {
+               left: 18em;
+               animation: animateAppear 1s ease-in-out forwards,
+                    firstChildAnimateToCenter 1.5s ease-in-out forwards 1.5s;
+
+               @keyframes firstChildAnimateToCenter {
+                    0% {
+                         left: 18em;
+                    }
+                    70% {
+                         opacity: 0;
+                    }
+                    100% {
+                         left: 10em;
+                         opacity: 0;
+                    }
+               }
+          }
+
+          &:last-child {
+               left: 5em;
+               animation: animateAppear 1s ease-in-out forwards, lastChildAnimateToCenter 1.5s ease-in-out forwards 1.5s;
+
+               @keyframes lastChildAnimateToCenter {
+                    0% {
+                         left: 5em;
+                    }
+                    50% {
+                         opacity: 0;
+                    }
+                    70% {
+                         opacity: 0;
+                    }
+                    100% {
+                         left: 13em;
+                         opacity: 0;
+                    }
+               }
+          }
+
+          @keyframes animateAppear {
+               0% {
+                    opacity: 0;
+               }
+               100% {
+                    opacity: 1;
+               }
+          }
+     }
+}
+
+.works-container {
+     border: 1px solid #1b1b1bf3;
+     //  height: 100vh;
+     padding: 5em 0;
+     //  background: radial-gradient(circle at center, #1b1b1bf3, #141313);
+     //  background-blend-mode: screen;
+
+     ul {
+          display: flex;
+          gap: 5em;
+          overflow-y: auto;
+          overflow-x: hidden;
+          scrollbar-width: none;
+
+          li {
+               display: flex;
+          }
+
+          .card {
+               background: rgba(255, 255, 255, 0.05);
+               width: 30em;
+               //    height: 35em;
+          }
+
+          .works-card-btn {
+               outline: none;
+
+               @include buttonConfig2(
+                    0.5em,
+                    1.5em,
+                    unset,
+                    $secondaryFontColor,
+                    $secondaryFontColor,
+                    0,
+                    $primaryFontColor
+               );
+
+               &:hover,
+               &:focus {
+                    border-color: $secondaryFontColor;
+                    outline: none;
+                    box-shadow: none;
+                    background-color: $secondaryFontColor;
+               }
+          }
+     }
+}

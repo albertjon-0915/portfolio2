@@ -49,7 +49,3 @@ $bgColor: rgba(14, 31, 47, 255);
      left: 50%;
      transform: translate(-50%, -50%);
 }
-
-@mixin animationConfig($name, $duration, $timingfunction, $direction) {
-     animation: $name $duration $timingfunction $direction;
-}

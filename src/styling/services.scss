@@ -1,70 +1,5 @@
 @import "./variables.scss";
 
-// .services-container {
-//      height: 60vh;
-//      display: flex;
-//      align-items: center;
-//      margin-left: 20em;
-//      margin-bottom: 5em;
-//      padding: 25em 0;
-//      background: url("..//media/working.png");
-//      background-repeat: no-repeat;
-//      background-position: bottom right;
-//      background-size: 50rem 50rem;
-//      transition: 0.5s ease-in-out;
-//      color: $primaryFontColor;
-
-//      @media (max-width: 1600px) {
-//           margin-left: 1em;
-//      }
-//      @media (max-width: 1400px) {
-//           background-size: 30rem 30rem;
-//      }
-
-//      @media (max-width: 1200px) {
-//           background-size: 15rem 15rem;
-//      }
-
-//      @media (max-width: 576px) {
-//           padding: 32em 0;
-//      }
-
-//      .service-item {
-//           .service {
-//                display: flex;
-//                gap: 1em;
-//                margin-bottom: 1em;
-//                transition: 0.5s ease-in-out;
-//                // margin-left: calc(var(--i) * 5em);
-
-//                p {
-//                     width: 300px;
-//                     color: lighten($primaryFontColor, 20%);
-//                }
-
-//                @media (max-width: 1400px) {
-//                     margin-left: calc(var(--i) * 3em);
-//                }
-
-//                @media (max-width: 992px) {
-//                     margin-left: calc(var(--i) * 4em);
-//                }
-
-//                @media (max-width: 768px) {
-//                     margin-left: calc(var(--i) * 0em);
-//                }
-
-//                svg {
-//                     font-size: 5em;
-//                }
-//           }
-
-//           .service-in-out {
-//                margin-left: calc(var(--i) * 5em) !important;
-//           }
-//      }
-// }
-
 .services-container {
      height: 60vh;
      width: 100%;
@@ -110,7 +45,6 @@
 
           @media (max-width: 1200px) {
                max-width: 35em;
-               // min-height: 15em;
           }
 
           @media (max-width: 768px) {
@@ -143,26 +77,30 @@
           #item1 {
                transition: 0.2s ease-in-out;
                background-color: rgb(0, 247, 255, 0.1);
-               border-radius: 3px;
                border: 1px solid rgb(0, 247, 255, 0.9);
+               box-shadow: 0 0 25px 1px rgb(0, 247, 255, 0.18);
+               border-radius: 3px;
           }
           #item2 {
                transition: 0.5s ease-in-out;
                background-color: rgb(255, 123, 0, 0.1);
-               border-radius: 3px;
                border: 1px solid rgb(255, 123, 0, 0.9);
+               box-shadow: 0 0 25px 1px rgb(255, 123, 0, 0.18);
+               border-radius: 3px;
           }
           #item3 {
                transition: 0.3s ease-in-out;
                background-color: rgb(255, 11, 11, 0.1);
-               border-radius: 3px;
                border: 1px solid rgb(255, 11, 11, 0.9);
+               box-shadow: 0 0 25px 1px rgb(255, 11, 11, 0.18);
+               border-radius: 3px;
           }
           #item4 {
                transition: 0.4s ease-in-out;
                background-color: rgb(221, 0, 129, 0.1);
-               border-radius: 3px;
                border: 1px solid rgb(221, 0, 129, 0.9);
+               box-shadow: 0 0 25px 1px rgb(221, 0, 129, 0.18);
+               border-radius: 3px;
           }
 
           .services-in-out1 {

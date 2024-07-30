@@ -94,7 +94,15 @@
                font-size: clamp(1em, 2.5vw, 1.3em);
 
                button {
-                    @include buttonConfig();
+                    @include buttonConfig2(
+                         1.5em,
+                         0.5em,
+                         unset,
+                         $secondaryFontColor,
+                         $secondaryFontColor,
+                         unset,
+                         $primaryFontColor
+                    );
                }
 
                @media (max-width: 1600px) {

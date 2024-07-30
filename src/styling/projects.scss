@@ -273,7 +273,8 @@
                          display: flex;
                          justify-content: center;
                          padding-bottom: 1em;
-                         button {
+
+                         .button-seemore {
                               @include buttonConfig();
                          }
                     }

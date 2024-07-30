@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styling/projects.scss";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import videoRender from "../../media/video-coding.mp4";
 
 function Projects() {
@@ -8,9 +9,16 @@ function Projects() {
      const [back, setBackend] = useState([]);
      const [full, setFullStack] = useState([]);
 
+     const navigate = useNavigate();
+
+     const handleNavigate = () => {
+          // Navigate to the /projects route
+          navigate("/works");
+     };
+
      // fetch projects data from mongodb
      const fetchProj = () => {
-          fetch(`http://localhost:4000/stack/`)
+          fetch(`${process.env.REACT_APP_API_URL}/stack/`)
                .then((res) => res.json())
                .then(async (data) => {
                     const receivedData = await data.result.projects;
@@ -92,7 +100,14 @@ function Projects() {
                                         </p>
                                    </div>
                                    <div className="btn-container">
-                                        <button>See more</button>
+                                        <Button
+                                             className="button-seemore"
+                                             as={Link}
+                                             to={"/works"}
+                                             // onClick={handleNavigate}
+                                        >
+                                             See more
+                                        </Button>
                                    </div>
                               </div>
                          </div>

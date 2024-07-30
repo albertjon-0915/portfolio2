@@ -22,7 +22,9 @@ function navbar() {
                                    <Nav.Link as={Link} to={"/"}>
                                         Home
                                    </Nav.Link>
-                                   <Nav.Link href="#features">Projects</Nav.Link>
+                                   <Nav.Link as={Link} to={"/works"}>
+                                        Projects
+                                   </Nav.Link>
                                    <Nav.Link as={Link} to={"/login"}>
                                         Login
                                    </Nav.Link>
