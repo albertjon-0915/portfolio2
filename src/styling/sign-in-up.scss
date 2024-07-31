@@ -16,6 +16,18 @@
           padding: 2em;
           height: 35em;
           width: 30em;
+          animation: slideanimate 1s ease-in-out forwards;
+
+          @keyframes slideanimate {
+               0% {
+                    transform: translateX(5em);
+                    opacity: 0;
+               }
+               100% {
+                    transform: translateX(0);
+                    opacity: 1;
+               }
+          }
 
           p {
                color: lighten($primaryFontColor, 40%);
@@ -31,7 +43,12 @@
                flex-direction: column;
                justify-content: space-between;
 
-               .login {
+               a {
+                    cursor: pointer;
+               }
+
+               .login,
+               .register {
                     width: 100%;
 
                     .submit-button-wrapper {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import "../styling/login.scss";
+import "../styling/sign-in-up.scss";
 
 import { Container, Form, Button } from "react-bootstrap";
 
@@ -37,10 +37,13 @@ function Login() {
           })
                .then((res) => res.json())
                .then((result) => {
+                    console.log(result);
                     if (result.message === "Login successfully") {
+                         localStorage.setItem("token", result.access);
+                         console.log(localStorage.getItem("token"));
                          navigate("/");
                     } else {
-                         toast.error("failed to login");
+                         toast.error(result.message || result.error);
                     }
                });
      };
@@ -84,7 +87,7 @@ function Login() {
                          <p>
                               Do not have an account yet?{" "}
                               <span>
-                                   <a href="" className="text-danger">
+                                   <a className="text-danger" onClick={(e) => navigate("/register")}>
                                         Register{" "}
                                    </a>
                               </span>
