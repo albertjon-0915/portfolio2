@@ -23,21 +23,27 @@
      h1 {
           color: $secondaryFontColor;
           font-family: "Antonio", sans-serif !important;
-          font-size: 5em;
+          font-size: clamp(1em, 5vw, 5em);
           position: absolute;
           @include centered-absolute();
           opacity: 0;
+          // opacity: 1;
           animation: animateAppear 1s ease-in-out forwards;
           text-shadow: 0 0 12px $secondaryFontColor;
 
+          & * {
+               display: inline;
+          }
+
           &:first-child {
-               left: 18em;
+               left: clamp(5em, 18vw, 18em);
                animation: animateAppear 1s ease-in-out forwards,
                     firstChildAnimateToCenter 1.5s ease-in-out forwards 1.5s;
 
                @keyframes firstChildAnimateToCenter {
                     0% {
-                         left: 18em;
+                         left: clamp(5em, 18vw, 18em);
+                         left: 5em;
                     }
                     70% {
                          opacity: 0;
@@ -50,12 +56,13 @@
           }
 
           &:last-child {
-               left: 5em;
+               width: auto;
+               left: 15em;
                animation: animateAppear 1s ease-in-out forwards, lastChildAnimateToCenter 1.5s ease-in-out forwards 1.5s;
 
                @keyframes lastChildAnimateToCenter {
                     0% {
-                         left: 5em;
+                         left: 15em;
                     }
                     50% {
                          opacity: 0;
@@ -66,6 +73,28 @@
                     100% {
                          left: 13em;
                          opacity: 0;
+                    }
+               }
+
+               @media (min-width: 1600px) {
+                    left: calc(50% + 8em);
+                    animation: animateAppear 1s ease-in-out forwards,
+                         lastChildAnimateToCenter 1.5s ease-in-out forwards 1.5s;
+
+                    @keyframes lastChildAnimateToCenter {
+                         0% {
+                              left: calc(50% + 8em);
+                         }
+                         50% {
+                              opacity: 0;
+                         }
+                         70% {
+                              opacity: 0;
+                         }
+                         100% {
+                              left: 13em;
+                              opacity: 0;
+                         }
                     }
                }
           }
@@ -85,52 +114,50 @@
      display: flex;
 
      .works-container {
-          border: 1px solid red;
-          //  height: 100vh;
+          width: 100%;
+          overflow: hidden;
           padding: 5em 0;
-          //  background: radial-gradient(circle at center, #1b1b1bf3, #141313);
-          //  background-blend-mode: screen;
 
           h1 {
                margin-bottom: 0.5em;
           }
 
-          ul {
-               border: 1px solid red;
+          .react-multi-carousel-list {
+               padding: 0.5em;
                width: 100%;
-               overflow: hidden;
+               overflow-y: hidden;
+               overflow-x: auto;
                flex-grow: 1;
-
                display: flex;
                gap: 5em;
                scrollbar-width: none;
                margin-bottom: 10em;
 
-               li {
-                    display: flex;
-               }
-
                .card {
+                    height: 100%;
                     background: rgba(255, 255, 255, 0.05);
-                    width: 30em;
+                    width: clamp(15em, 30vw, 30em);
                     border: none;
                     border-radius: 5px;
-                    box-shadow: 1px -1px 15px 1px rgba(102, 102, 102, 0.164);
+                    box-shadow: 0 0 15px 1px rgba(102, 102, 102, 0.164);
 
                     .card-title {
-                         font-size: 1.5em;
+                         font-size: clamp(0.5em, 1.5vw, 1.5em);
                     }
                     .card-subtitle {
+                         font-size: clamp(0.5em, 1vw, 1em);
                          margin-top: 0.2em;
                     }
 
                     .card-text {
+                         font-size: clamp(0.5em, 1vw, 0.85em);
                          margin-top: 1em;
                          color: lighten($primaryFontColor, 30%);
                     }
                }
 
                .works-card-btn {
+                    font-size: clamp(0.5em, 1vw, 1em);
                     outline: none;
 
                     @include buttonConfig2(
@@ -155,18 +182,51 @@
      }
 
      .tracer-container {
-          border: 1px solid red;
-          min-width: 35em;
+          width: clamp(10em, 30vw, 35em);
           display: flex;
           justify-content: center;
 
           .tracer {
+               position: relative;
                height: 50px;
                min-height: 3%;
                max-height: 85%;
-               width: 5em;
+               width: clamp(2em, 5vw, 5em);
                background: $primaryFontColor;
                border-radius: 0 0 50px 50px;
+
+               div {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    z-index: -2;
+                    border-radius: 50%;
+               }
+
+               .glow-active {
+                    animation: animateglow .3s ease-in-out forwards;
+
+                    @keyframes animateglow {
+                         0% {
+                              background: radial-gradient(circle at center, transparent, transparent, transparent);
+                              width: 0em;
+                              height: 0em;
+                              transform: translateX(-50%);
+                         }
+
+                         100% {
+                              width: 30em;
+                              height: 30em;
+                              background: radial-gradient(
+                                   circle at center,
+                                   darken($secondaryFontColor, 10%),
+                                   transparent,
+                                   transparent
+                              );
+                              transform: translateX(-50%) translateY(12em);
+                         }
+                    }
+               }
           }
      }
 }

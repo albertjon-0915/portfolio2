@@ -1,6 +1,6 @@
 $differenceFontColor: #c5c5c5;
-$primaryFontColor: #3a3a3a;
-$secondaryFontColor: #dc3545;
+$primaryFontColor: rgb(58, 58, 58);
+$secondaryFontColor: rgb(220, 53, 69);
 $bgColor: rgba(14, 31, 47, 255);
 
 @mixin buttonConfig($me: unset) {
