@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 import "../styling/hero.scss";
@@ -9,6 +10,7 @@ import { HiDownload } from "react-icons/hi";
 import something from "../media/Albert Jon Inciong.pdf";
 
 function Hero() {
+     const navigate = useNavigate();
      const color = ["#00f7ff", "#ff5100", "#c51e00", "#ff0b0b", "#dd0081"];
 
      const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,53 +79,53 @@ function Hero() {
                          transform ideas into impactful digital solutions. My journey is driven by continuous learning
                          and innovation.
                     </p>
-                    <button>
+                    <a href="#contact">
                          contact me
                          <span className="ms-3">
                               <GrContact />
                          </span>
-                    </button>
+                    </a>
                </div>
 
                <ul className="socials-container1 list-unstyled d-flex">
                     <li className="item1">
-                         <a href="">
+                         <a href="https://www.facebook.com/alaric.0915" target="_blank">
                               <BsFacebook />
                          </a>
                     </li>
                     <li className="item2">
-                         <a href="">
+                         <a href="https://github.com/albertjon-0915" target="_blank">
                               <BsGithub />
                          </a>
                     </li>
                     <li className="item3">
-                         <a href="">
+                         <a href="https://www.linkedin.com/in/albert-jon-7a8957288/" target="_blank">
                               <BsLinkedin />
                          </a>
                     </li>
                     <div className="item4">
-                         <a href="">Let's talk</a>
+                         <a href="#contact">Let's talk</a>
                     </div>
                </ul>
 
                <ul className="socials-container2 list-unstyled d-flex">
                     <li className="item1">
-                         <a href="">
+                         <a href="https://www.facebook.com/alaric.0915" target="_blank">
                               <BsFacebook />
                          </a>
                     </li>
                     <li className="item2">
-                         <a href="">
+                         <a href="https://github.com/albertjon-0915" target="_blank">
                               <BsGithub />
                          </a>
                     </li>
                     <li className="item3">
-                         <a href="">
+                         <a href="https://www.linkedin.com/in/albert-jon-7a8957288/" target="_blank">
                               <BsLinkedin />
                          </a>
                     </li>
                     <div className="item4">
-                         <a href="">Let's talk</a>
+                         <a href="#contact">Let's talk</a>
                     </div>
                </ul>
           </Container>

@@ -5,7 +5,7 @@ import astronaut from "../../media/UFO.png";
 
 function contact() {
      return (
-          <Container fluid className="contact-container d-flex justify-content-center">
+          <Container fluid className="contact-container d-flex justify-content-center" id="contact">
                <Container className="form-container">
                     <h1 className="m-md-5 m-4 text-center">CONTACT ME</h1>
                     <Form noValidate>

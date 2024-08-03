@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../../styling/projects.scss";
 import { Button, Container } from "react-bootstrap";
 import videoRender from "../../media/video-coding.mp4";
@@ -22,6 +22,10 @@ function Projects() {
                });
      };
 
+     const handlePageJump = (url) => {
+          window.location.href = url;
+     };
+
      useEffect(() => {
           fetchProj();
      }, []);
@@ -35,8 +39,8 @@ function Projects() {
                               <h3 className="text-center">{stack[0].title}</h3>
                               <h5 className="text-center">{stack[0].subtitle}</h5>
                               <div id="btn-container">
-                                   <button>code</button>
-                                   <button>live demo</button>
+                                   <button onClick={(e) => handlePageJump(stack[0].gitlink)}>code</button>
+                                   <button onClick={(e) => handlePageJump(stack[0].link)}>live demo</button>
                               </div>
                          </div>
                     </div>

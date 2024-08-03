@@ -208,7 +208,8 @@
                margin: 8em 2em;
           }
 
-          button {
+          a {
+               text-decoration: none;
                @include buttonConfig2(0.5em, 1.5em, unset, #dc3545, #dc3545);
 
                margin-top: 1em;
