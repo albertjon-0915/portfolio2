@@ -27,8 +27,9 @@ function Services() {
                                    <div>
                                         <h4>Responsiveness</h4>
                                         <p>
-                                             Ensures websites adapt fluidly to different devices and screen sizes,
-                                             providing an optimal viewing experience across all platforms.
+                                             Ensures websites <span className="text-danger">adapt fluidly </span>to
+                                             different devices and screen sizes, providing an optimal viewing experience
+                                             across all platforms.
                                         </p>
                                    </div>
                               </div>
@@ -37,8 +38,9 @@ function Services() {
                                    <div>
                                         <h4>Dynamic</h4>
                                         <p>
-                                             Creates interactive and responsive web applications that engage users with
-                                             real-time updates and responsive features.
+                                             Creates <span className="text-danger">interactive</span> and{" "}
+                                             <span className="text-danger">responsive</span> web applications that
+                                             engage users with real-time updates and responsive features.
                                         </p>
                                    </div>
                               </div>
@@ -49,8 +51,9 @@ function Services() {
                                    <div>
                                         <h4>Creative</h4>
                                         <p>
-                                             Combines aesthetics with functionality to craft visually appealing
-                                             interfaces that enhance user experience.
+                                             Combines <span className="text-danger">aesthetics</span> with
+                                             <span className="text-danger"> functionality</span> to craft visually
+                                             appealing interfaces that enhance user experience.
                                         </p>
                                    </div>
                               </div>
@@ -59,8 +62,10 @@ function Services() {
                                    <div>
                                         <h4>Fast</h4>
                                         <p>
-                                             Delivers high-quality web development solutions quickly and efficiently,
-                                             optimizing both speed and performance.
+                                             Delivers high-quality web development solutions
+                                             <span className="text-danger"> quickly</span> and
+                                             <span className="text-danger"> efficiently</span>, optimizing both speed
+                                             and performance.
                                         </p>
                                    </div>
                               </div>

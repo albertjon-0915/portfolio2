@@ -57,15 +57,15 @@
                scale: 0;
 
                h4 {
-                    font-size: clamp(1em, 2vw, 2.5em);
+                    font-size: clamp(1.5em, 2vw, 2.5em);
                }
 
                p {
-                    font-size: clamp(0.9em, 1.5vw, 1.5em);
+                    font-size: clamp(1em, 1vw, 1.1em);
                }
 
                svg {
-                    font-size: clamp(1em, 3.5vw, 5em);
+                    font-size: clamp(1em, 5vw, 5em);
                }
 
                @media (max-width: 768px) {

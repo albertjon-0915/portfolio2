@@ -151,7 +151,7 @@ function Works() {
                                    <Card.Title>{item.title}</Card.Title>
                                    <Card.Subtitle>{item.subtitle}</Card.Subtitle>
                                    <Card.Text>{item.description}</Card.Text>
-                                   <Button className="works-card-btn">
+                                   <Button onClick={(e) => handlePageJump(item.gitlink)} className="works-card-btn">
                                         code <LuCode2 className="ms-1" />
                                    </Button>
                                    <Button onClick={(e) => handlePageJump(item.link)} className="works-card-btn">
