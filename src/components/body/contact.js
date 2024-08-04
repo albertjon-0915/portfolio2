@@ -11,6 +11,7 @@ function Contact() {
      const [number, setNumber] = useState("");
      const [comment, setComment] = useState("");
      const [reviews, setReviews] = useState([]);
+     const [currentIndex, setCurrentIndex] = useState(0);
 
      const getActive = () => {
           const input = document.querySelectorAll(".input-form-wrapper");
@@ -36,7 +37,7 @@ function Contact() {
                body: JSON.stringify({
                     email: email,
                     mobileNo: number,
-                    comment: comment,
+                    comments: comment,
                }),
           })
                .then((res) => res.json())
@@ -65,6 +66,25 @@ function Contact() {
           getActive();
           fetchReviews();
      }, []);
+
+     useEffect(() => {
+          const interval = setInterval(() => {
+               setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+          }, 3000);
+
+          return () => clearInterval(interval);
+     }, [reviews.length]);
+
+     const render = (item) => {
+          if (reviews.length > 0) {
+               return (
+                    <>
+                         <h1>{item.email}</h1>
+                         <p>{item.comments}</p>
+                    </>
+               );
+          }
+     };
 
      return (
           <Container fluid className="contact-container" id="contact">
@@ -117,7 +137,10 @@ function Contact() {
                          </Button>
                     </Form>
                </div>
-               <div className="contact-messages "></div>
+               <div className="contact-messages d-flex">
+                    <div className="reviews-item"></div>
+                    <div className="reviews-item">{render(reviews[currentIndex])}</div>
+               </div>
 
                <Toaster position="bottom-left" toastOptions={{ className: "popupToast", duration: 5000 }} />
           </Container>
