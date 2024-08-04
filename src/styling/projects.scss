@@ -76,7 +76,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    filter: brightness(80%);
+                    filter: brightness(80%) grayscale(1);
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -101,21 +101,19 @@
                display: flex;
                justify-content: center;
                align-items: center;
-               background: linear-gradient(to right, rgb(197, 30, 0, 0.5), rgb(0, 247, 255, 0.5)),
-                    radial-gradient(ellipse at top, rgb(255, 11, 11, 0.5), lighten($bgColor, 20%)),
-                    radial-gradient(ellipse at left bottom, rgba(255, 11, 11, 0.512), rgba(221, 0, 129, 0.486)),
-                    radial-gradient(ellipse at right, rgba(5, 180, 136, 0.568), rgb(0, 247, 255, 0.5)),
-                    radial-gradient(circle at 10% 20%, $bgColor, yellowgreen);
-
+               background: radial-gradient(ellipse at 50% 20%, rgba(255, 11, 11, 0.288), transparent, transparent),
+                    radial-gradient(ellipse at 40% 60%, rgba(255, 11, 125, 0.349), transparent, transparent),
+                    radial-gradient(ellipse at 70% 70%, rgba(255, 109, 11, 0.349), transparent, transparent);
                background-blend-mode: screen;
                backdrop-filter: blur(16px);
                -webkit-backdrop-filter: blur(16px);
 
                &:hover {
-                    box-shadow: 0 0 25px 3px rgba(0, 247, 255, 0.178);
+                    box-shadow: 0 0 25px 3px rgba(247, 18, 236, 0.178);
                }
 
                h1 {
+                    color: $differenceFontColor;
                     font-size: clamp(1.2em, 5.5vw, 5.5em);
                }
 
@@ -164,11 +162,11 @@
                grid-area: 1 / 4 / 2 / 5;
           }
           #item5 {
-               background: url("../media/city.png"), linear-gradient(rgba(253, 253, 253, 0.2), rgba(14, 31, 47, 0.2));
+               background: url("../media/astronaut-bento.avif");
                background-repeat: no-repeat;
-               background-position: bottom right;
+               background-position: center right;
                overflow: hidden;
-               background-size: contain;
+               background-size: cover;
                background-origin: content-box;
                backdrop-filter: blur(16px);
                -webkit-backdrop-filter: blur(16px);
@@ -176,10 +174,6 @@
                grid-area: 3 / 1 / 4 / 4;
                transition: 0.5s ease-in-out;
                color: $differenceFontColor;
-
-               @media (max-width: 768px) {
-                    background: linear-gradient(rgba(253, 253, 253, 0.2), rgba(14, 31, 47, 0.2));
-               }
 
                .item5-content {
                     height: 100%;
@@ -244,7 +238,6 @@
                }
           }
           #item6 {
-               background: $bgColor;
                color: $differenceFontColor;
                grid-area: 2 / 4 / 4 / 5;
                overflow: hidden;
@@ -258,13 +251,12 @@
                }
 
                .item6-content-container {
-                    border: 1px solid $differenceFontColor;
-
                     .item6-text-container {
                          padding: 1em;
                          font-size: clamp(0.5em, 1.5vw, 1.1em);
 
                          span {
+                              color: $secondaryFontColor;
                               font-size: clamp(0.8em, 1.5vw, 1.7em);
                               font-weight: 900;
                          }
@@ -275,7 +267,15 @@
                          padding-bottom: 1em;
 
                          .button-seemore {
-                              @include buttonConfig();
+                              @include buttonConfig2(
+                                   0.5em,
+                                   1.5em,
+                                   1em,
+                                   $secondaryFontColor,
+                                   $secondaryFontColor,
+                                   0,
+                                   $differenceFontColor
+                              );
                          }
                     }
                }

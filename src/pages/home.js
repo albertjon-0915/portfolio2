@@ -27,7 +27,7 @@ function HeroPage() {
                <body className="container-body">
                     <About />
                     <Services />
-                    <Waypoint onEnter={onEnterViewport} onLeave={onExitViewport} bottomOffset={"10%"} topOffset={"15%"}>
+                    <Waypoint onEnter={onEnterViewport} onLeave={onExitViewport} bottomOffset={"5%"} topOffset={"15%"}>
                          <Container fluid className={`home ${visible ? "bg-in-out" : ""}`}>
                               <TechAndTools />
                               <Projects />

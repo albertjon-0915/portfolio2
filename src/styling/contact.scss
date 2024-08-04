@@ -1,68 +1,98 @@
 @import "./variables.scss";
 
-.form-container {
-     position: relative;
-     margin: 20vh 0;
-     border-radius: 15px;
-     border: 1px solid lighten($primaryFontColor, 50%);
+.contact-container {
+     display: flex;
+     margin: 10em 0;
+     color: $primaryFontColor;
 
-     h1 {
-          color: $primaryFontColor;
+     .contact-form,
+     .contact-messages {
+          border: 1px solid red;
      }
 
-     form {
-          position: relative;
-          padding: 5em;
-          font-size: 1.2em;
+     .contact-form {
+          flex-grow: 1;
+          padding: 3em 5em;
 
-          @media (max-width: 576px) {
-               margin: 10vh 0;
-               padding: 2em;
-          }
+          form {
+               .contact-btn-form {
+                    border-radius: none;
 
-          button {
-               @include buttonConfig();
-          }
+                    @include buttonConfig2(
+                         0.5em,
+                         1.5em,
+                         unset,
+                         $secondaryFontColor,
+                         $secondaryFontColor,
+                         0px,
+                         $primaryFontColor
+                    );
+               }
 
-          img {
-               position: absolute;
-               right: 0;
-               top: 50%;
-               transform: translateY(-50%);
-               transition: 0.5s ease-in-out;
-               animation: UFO-positioning 5s linear infinite;
+               .input-email,
+               .input-phone,
+               .input-comment {
+                    margin: 2em 0;
+               }
 
-               @keyframes UFO-positioning {
-                    0% {
-                         margin-top: 5em;
+               .input-email,
+               .input-phone {
+                    max-width: 25rem;
+
+                    .input-form-wrapper {
+                         padding: 0;
+                         position: relative;
+
+                         & * {
+                              transition: 0.3s ease-in-out;
+                         }
+
+                         .input-field {
+                              padding: none;
+                              border-radius: unset;
+                              border-top: none;
+                              border-left: none;
+                              border-right: none;
+                              border-bottom: 1px solid lighten($primaryFontColor, 60%);
+                              outline: none;
+                              box-shadow: none;
+
+                              &:active,
+                              &:focus {
+                                   border-bottom: 1px solid lighten($secondaryFontColor, 10%);
+                              }
+                         }
+
+                         .form-label {
+                              margin: 12em;
+                              position: absolute;
+                              top: 50%;
+                              left: 0;
+                              margin: 0;
+                              transform: translateY(-50%);
+                              color: lighten($primaryFontColor, 40%);
+                         }
+
+                         .active {
+                              top: -2px;
+                              font-size: 0.9rem;
+                         }
                     }
-                    50% {
-                         margin-top: -5em;
+               }
+
+               .input-field-comment {
+                    &:active,
+                    &:focus,
+                    &:hover {
+                         outline: $secondaryFontColor;
+                         border-color: $secondaryFontColor;
+                         box-shadow: 0 0 0 0.25rem lighten($secondaryFontColor, 40%);
                     }
-
-                    100% {
-                         margin-top: 5em;
-                    }
-               }
-
-               @media (max-width: 1200px) {
-                    top: 30%;
-                    transform: translateY(-70%);
-                    scale: 0.5;
-               }
-
-               @media (max-width: 992px) {
-                    animation: none;
-                    top: unset;
-                    right: 0;
-                    bottom: 0;
-                    margin: -4em;
-               }
-
-               @media (max-width: 576px) {
-                    scale: 0;
-                    visibility: hidden;
                }
           }
+     }
+
+     .contact-messages {
+          flex-grow: 2;
      }
 }

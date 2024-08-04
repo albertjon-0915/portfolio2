@@ -1,48 +1,78 @@
-import React from "react";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Form, Row, Button } from "react-bootstrap";
 import "../../styling/contact.scss";
-import astronaut from "../../media/UFO.png";
+import toast, { Toaster } from "react-hot-toast";
 
-function contact() {
+function Contact() {
+     const [email, setEmail] = useState("");
+     const [number, setNumber] = useState("");
+
+     const getActive = () => {
+          const input = document.querySelectorAll(".input-form-wrapper");
+          console.log(input);
+
+          input.forEach((inp) => {
+               const inputValue = inp.querySelector(".input-field");
+               const inputLabel = inp.querySelector(".form-label");
+
+               console.log(inputLabel, inputValue);
+
+               inputValue.addEventListener("focus", () => inputLabel.classList.add("active"));
+               inputValue.addEventListener("blur", () => {
+                    if (inputValue.value !== "") return;
+                    inputLabel.classList.remove("active");
+               });
+          });
+     };
+
+     useEffect(() => {
+          getActive();
+     }, []);
+
      return (
-          <Container fluid className="contact-container d-flex justify-content-center" id="contact">
-               <Container className="form-container">
-                    <h1 className="m-md-5 m-4 text-center">CONTACT ME</h1>
+          <Container fluid className="contact-container" id="contact">
+               <div className="contact-form">
+                    <h2>CONTACT ME</h2>
                     <Form noValidate>
-                         <Row className="mb-3">
-                              <Form.Group as={Col} md="4" controlId="validationCustom01">
-                                   <Form.Label>Email</Form.Label>
-                                   <Form.Control required type="email" placeholder="albert@mail.com" />
+                         <Row className="mb-3 input-email">
+                              <Form.Group className="input-form-wrapper">
+                                   <Form.Label className="form-label">Email</Form.Label>
+                                   <Form.Control required type="email" className="input-field" />
                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                               </Form.Group>
                          </Row>
-                         <Row className="mb-3">
-                              <Form.Group as={Col} md="4" controlId="validationCustom01">
-                                   <Form.Label>Contact number</Form.Label>
-                                   <Form.Control required type="text" placeholder="09154018912" />
+                         <Row className="mb-3 input-phone">
+                              <Form.Group className="input-form-wrapper">
+                                   <Form.Label className="form-label">Contact number</Form.Label>
+                                   <Form.Control required type="number" className="input-field" />
                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                               </Form.Group>
                          </Row>
-                         <Row className="mb-3">
-                              <Form.Group as={Col} md="8" controlId="validationCustom01">
-                                   <Form.Label>Comments</Form.Label>
+                         <Row className="p-0 mb-3 input-comment">
+                              <Form.Group className="p-0">
+                                   <Form.Label>Comment: </Form.Label>
                                    <Form.Control
                                         required
                                         type="text"
                                         as="textarea"
-                                        placeholder="Comments on my work?"
+                                        placeholder="leave a message"
+                                        className="input-field-comment"
                                    />
                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                               </Form.Group>
                          </Row>
-                         <Button type="submit" className="mt-5">
+                         <Button type="submit" className="contact-btn-form mt-5">
                               Submit
                          </Button>
-                         <img src={astronaut} alt="img" />
                     </Form>
-               </Container>
+               </div>
+               <div className="contact-messages">
+                    <div>
+                         <div></div>
+                    </div>
+               </div>
           </Container>
      );
 }
 
-export default contact;
+export default Contact;
