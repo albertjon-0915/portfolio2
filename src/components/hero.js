@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { GrContact } from "react-icons/gr";
 import { HiDownload } from "react-icons/hi";
-import something from "../media/Albert Jon Inciong.pdf";
+import resume from "../media/Albert Jon Inciong.pdf";
 
 function Hero() {
      const navigate = useNavigate();
@@ -50,7 +50,7 @@ function Hero() {
      }, [textspan.length]);
 
      return (
-          <Container fluid className="hero-container">
+          <Container fluid className="hero-container" id="hero">
                <div className="main-content-wrapper">
                     <div className="text-wrapper1">
                          <h1 className="h1-content">
@@ -65,7 +65,7 @@ function Hero() {
                          Empowering your vision with seamless front-end experiences and robust back-end solutions. From
                          design to deployment, I bring your ideas to life with precision and creativity.
                     </p>
-                    <a href={something} download="Albert Jon Inciong.pdf" className="resume-download">
+                    <a href={resume} download="Albert Jon Inciong.pdf" className="resume-download">
                          resume
                          <span className="ms-3">
                               <HiDownload />

@@ -93,7 +93,10 @@
                margin-right: 30em;
                font-size: clamp(1em, 2.5vw, 1.3em);
 
-               button {
+               a {
+                    display: inline-block;
+                    text-decoration: none;
+
                     @include buttonConfig2(
                          1.5em,
                          0.5em,

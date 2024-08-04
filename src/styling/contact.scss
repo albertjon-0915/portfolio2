@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 .contact-container {
      display: flex;
@@ -7,10 +9,11 @@
 
      .contact-form,
      .contact-messages {
-          border: 1px solid red;
+          // border: 1px solid red;
      }
 
      .contact-form {
+          min-width: 50em;
           flex-grow: 1;
           padding: 3em 5em;
 
@@ -94,5 +97,7 @@
 
      .contact-messages {
           flex-grow: 2;
+          border: 1px solid lighten($secondaryFontColor, 30%);
+          width: 50em;
      }
 }

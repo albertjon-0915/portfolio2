@@ -1,7 +1,31 @@
 @import "./variables.scss";
 
-#navbar {
+#nav-container {
      z-index: 2;
+}
+
+.nav-bg {
+     background: rgba(0, 0, 0, 0.445);
+     min-width: 23%;
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-animate-in {
+     animation: animatein 0.5s ease-in-out forwards;
+
+     @keyframes animatein {
+          0% {
+               transform: translateY(-50px);
+          }
+          100% {
+               transform: translateY(0px);
+          }
+     }
+}
+
+#navbar {
+     font-size: 1.1em;
      @media (max-width: 768px) {
           min-width: 90vw;
      }

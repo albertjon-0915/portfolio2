@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form, Row, Button } from "react-bootstrap";
+import { Container, Form, Row, Button, Card } from "react-bootstrap";
 import "../../styling/contact.scss";
 import toast, { Toaster } from "react-hot-toast";
+import Slider from "react-slick";
+import { IoIosQuote } from "react-icons/io";
+import { BiSolidQuoteRight } from "react-icons/bi";
 
 function Contact() {
      const [email, setEmail] = useState("");
      const [number, setNumber] = useState("");
+     const [comment, setComment] = useState("");
+     const [reviews, setReviews] = useState([]);
 
      const getActive = () => {
           const input = document.querySelectorAll(".input-form-wrapper");
-          console.log(input);
 
           input.forEach((inp) => {
                const inputValue = inp.querySelector(".input-field");
                const inputLabel = inp.querySelector(".form-label");
-
-               console.log(inputLabel, inputValue);
 
                inputValue.addEventListener("focus", () => inputLabel.classList.add("active"));
                inputValue.addEventListener("blur", () => {
@@ -25,26 +27,73 @@ function Contact() {
           });
      };
 
+     const sendComment = (e) => {
+          e.preventDefault();
+
+          fetch(`${process.env.REACT_APP_API_URL}/reviews`, {
+               method: "POST",
+               headers: { "Content-type": "application/json" },
+               body: JSON.stringify({
+                    email: email,
+                    mobileNo: number,
+                    comment: comment,
+               }),
+          })
+               .then((res) => res.json())
+               .then((result) => {
+                    console.log(result);
+                    if (result.message === "Successfully created a comment") {
+                         toast.success("Thank you for leaving a message!");
+                         fetchReviews();
+                    } else {
+                         toast.error("Something went wrong please try again");
+                    }
+               });
+     };
+
+     const fetchReviews = () => {
+          fetch(`${process.env.REACT_APP_API_URL}/reviews`)
+               .then((res) => res.json())
+               .then((result) => {
+                    if (result) {
+                         setReviews(result.result);
+                    }
+               });
+     };
+
      useEffect(() => {
           getActive();
+          fetchReviews();
      }, []);
 
      return (
           <Container fluid className="contact-container" id="contact">
                <div className="contact-form">
                     <h2>CONTACT ME</h2>
-                    <Form noValidate>
+                    <Form noValidate onSubmit={sendComment}>
                          <Row className="mb-3 input-email">
                               <Form.Group className="input-form-wrapper">
                                    <Form.Label className="form-label">Email</Form.Label>
-                                   <Form.Control required type="email" className="input-field" />
+                                   <Form.Control
+                                        required
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="input-field"
+                                   />
                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                               </Form.Group>
                          </Row>
                          <Row className="mb-3 input-phone">
                               <Form.Group className="input-form-wrapper">
                                    <Form.Label className="form-label">Contact number</Form.Label>
-                                   <Form.Control required type="number" className="input-field" />
+                                   <Form.Control
+                                        required
+                                        type="number"
+                                        value={number}
+                                        onChange={(e) => setNumber(e.target.value)}
+                                        className="input-field"
+                                   />
                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                               </Form.Group>
                          </Row>
@@ -55,6 +104,8 @@ function Contact() {
                                         required
                                         type="text"
                                         as="textarea"
+                                        value={comment}
+                                        onChange={(e) => setComment(e.target.value)}
                                         placeholder="leave a message"
                                         className="input-field-comment"
                                    />
@@ -66,11 +117,9 @@ function Contact() {
                          </Button>
                     </Form>
                </div>
-               <div className="contact-messages">
-                    <div>
-                         <div></div>
-                    </div>
-               </div>
+               <div className="contact-messages "></div>
+
+               <Toaster position="bottom-left" toastOptions={{ className: "popupToast", duration: 5000 }} />
           </Container>
      );
 }

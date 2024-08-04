@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styling/footer.scss";
 import { Container } from "react-bootstrap";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+import resume from "../media/Albert Jon Inciong.pdf";
 
 function Footer() {
      const language = ["HTML", "CSS", "JavaScript", "NodeJS", "ExpressJS", "ReactJS", "Mongoose", "RESTful API's"];
@@ -25,9 +27,13 @@ function Footer() {
                          </ul>
                     </div>
                     <div className="d-flex flex-column">
-                         <a href="">sign up</a>
-                         <a href="">contact</a>
-                         <a href="">resume</a>
+                         <a as={Link} to={"/register"} href="">
+                              sign up
+                         </a>
+                         <a href="#contact">contact</a>
+                         <a href={resume} download="Albert Jon Inciong.pdf" className="resume-download">
+                              resume
+                         </a>
                     </div>
                </div>
                <div className="div2 mt-5">

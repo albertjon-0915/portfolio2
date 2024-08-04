@@ -75,7 +75,9 @@ function Body() {
                                    <span className="text-danger"> SASS</span> for maintainable code. I'm committed to
                                    continuous learning and delivering high-quality web solutions.
                               </p>
-                              <button className="about-btn py-2 mt-5">Contact Me</button>
+                              <a href="#contact" className="about-btn py-2 mt-5">
+                                   Contact Me
+                              </a>
                          </div>
                     </div>
                </Waypoint>
