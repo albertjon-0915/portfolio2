@@ -21,10 +21,6 @@ function Hero() {
                <span style={{ color: color[0], textShadow: `0 0 25px ${color[0]}` }}>Developer</span>
           </h1>,
           <h1 className="h1-content">
-               <span>Web </span>
-               <span style={{ color: color[1], textShadow: `0 0 25px ${color[1]}` }}>Designer</span>
-          </h1>,
-          <h1 className="h1-content">
                <span>"</span>
                <span style={{ color: color[2], textShadow: `0 0 25px ${color[2]}` }}>Think</span>
                <span>"</span>
